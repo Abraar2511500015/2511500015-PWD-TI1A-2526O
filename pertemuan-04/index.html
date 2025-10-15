@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moh. Sayyid Abraar</title>
+    <style>
+        #about {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
+        #about h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        #about p {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            margin: 0;
+            padding: 6px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        #about strong {
+            min-width: 180px;
+            color: #003366;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 16px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            #about p {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #about strong {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Moh. Sayyid Abraar</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Selamat Datang</h2>
+            <p>Halo, Selamat datang di website saya</p>
+        </section>
+        <section id="about">
+            <h2>Tentang Saya</h2>
+                <p><strong>NIM:</strong>2511500015</p>
+                <p><strong>Nama:</strong>Moh. Sayyid Abraar</p>
+                <p><strong>Tempat Lahir:</strong>Sungailiat</p>
+                <p><strong>Tanggal Lahir:</strong>26 Januari 2007</p>
+                <p><strong>Hobi:</strong>Bermain game dan membaca novel</p>
+                <p><strong>Pasangan:</strong>Karinia Dwi Indah Suryani&#128525</p>
+                <p><strong>Pekerjaan:</strong>Belum ada</p>
+                <p><strong>Nama Orang Tua:</strong>Ayah Suhidin dan Ibu Affika kushana</p>
+                <p><strong>Nama Adik:</strong>Moch Faaiq Al-Tsaqiif</p>
+        </section>
+        <section id="contact">
+            <h2>Kontak Saya</h2>
+            <form action="" method="GET">
+                <input type="color">
+                <label for="txtNama">Nama:</label>
+                <input maxlength="10" type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+
+                <label for="txtEmail">Email:</label>
+                <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+
+                <label for="txtPesan">Pesan:</label>
+                <textarea rows="4" id="txtPesan" name="txtPesan" placeholder="Tulis pesan anda..." required></textarea>
+
+                <button type="submit">Kirim</button>
+                <button type="reset">Batal</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Moh. Sayyid Abraar [2511500015]</p>
+    </footer>
+</body>
+</html>
