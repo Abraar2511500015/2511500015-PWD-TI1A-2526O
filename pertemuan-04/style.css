@@ -31,6 +31,23 @@ header li a {
     padding: 6px 12px;
 }
 
+header li a:hover {
+    background-color: #ff66cc;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+header li a:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    border-radius: 6px;
+    background-color: #ff66cc;
+}
+
+header li a:active {
+    background-color: #ff009d;
+    transform: translateY(1px);
+}
 #home,
 #about,
 #contact {
