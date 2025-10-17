@@ -42,7 +42,7 @@ header li a {
             box-shadow: 0 2px 5px rgb(255, 255, 255);
 }
 
-#home,
+#home h2,
 #about h2,
 #contact h2 {
             color: #ffffff;
@@ -55,6 +55,7 @@ header li a {
 #home p {
     text-align: justify;
 }
+
 #about p,
 #contact label {
     display: flex;
