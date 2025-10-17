@@ -30,6 +30,8 @@ header li a {
     text-decoration: none;
     padding: 6px 12px;
 }
+
+#home,
 #about,
 #contact {
             background-color: #ff009d;
@@ -40,6 +42,7 @@ header li a {
             box-shadow: 0 2px 5px rgb(255, 255, 255);
 }
 
+#home,
 #about h2,
 #contact h2 {
             color: #ffffff;
@@ -49,6 +52,9 @@ header li a {
             margin-bottom: 16px;
 }
 
+#home p {
+    text-align: justify;
+}
 #about p,
 #contact label {
     display: flex;
