@@ -7,8 +7,8 @@ Hari ini, Rabu 22 Oktober 2025, saya belajar:
 <ol>
     <li>copy index.html dan style.css folder pertemuan-04</li>
     <li>tombol hamburger</li>
-    <li>class menu-toggle</li>
-    <li>class menu-toggle mobile</li>
+    <li>styling class menu-toggle</li>
+    <li>styling class menu-toggle mobile</li>
     <li>styling elemen nav</li>
     <li>styling elemen nav active</li>
     <li>membuat script.js</li>
