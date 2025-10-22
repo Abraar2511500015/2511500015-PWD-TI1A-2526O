@@ -107,6 +107,18 @@ footer {
         left: 16px;
         top: 8px;
     }
+
+     nav {
+        display: none;
+        flex-direction: column;
+        background: #ff009d;
+        width: 100%;
+        padding: 5px 0;
+    }
+     nav.active {
+        display: flex;
+    }
+
     header {
         padding: 16px;
         position: sticky;
@@ -143,18 +155,7 @@ footer {
         padding-right: 0;
         margin-bottom: 2px;
     }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        background: #ff009d;
-        width: 100%;
-        padding: 5px 0;
-    }
-
-    nav.active {
-        display: flex;
-    }
+ 
 }
 
 #contact input,
