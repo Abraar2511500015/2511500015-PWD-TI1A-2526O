@@ -104,6 +104,7 @@ footer {
 .menu-toggle {
     display: none;
     background: none;
+    border: none;
     color: #ffffff;
     font-size: 28px;
     cursor: pointer;
