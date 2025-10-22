@@ -189,3 +189,11 @@ footer {
 #contact button {
     width: 100%;
 }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: #ff009d;
+    font-size: 28px;
+    cursor: pointer;
+}
