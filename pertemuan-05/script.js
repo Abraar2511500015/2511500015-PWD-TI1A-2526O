@@ -84,7 +84,7 @@ function alignErrorMessage(smallEl, inputEl) {
     const offsetLeft = Math.max(0, Math.round(rectInput.left - rectLabel.left));
 
     smallEl.style.marginLeft = offsetLeft + "px";
-    smallEl.style.width = Math.round(rectLabel.width) + "px";
+    smallEl.style.width = Math.round(rectInput.width) + "px";
 }
 
 window.addEventListener("resize", () => {
