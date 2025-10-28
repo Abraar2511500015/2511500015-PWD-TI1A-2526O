@@ -51,11 +51,11 @@ function showError(inputElement, message) {
     small.textContent = message;
 
     small.style.color = "red";
-    small.style.fontsize = "14px";
+    small.style.fontSize = "14px";
     small.style.display = "block";
     small.style.marginTop = "4px";
     small.style.flexBasis ="100%";
-    small.datatest.forId = inputElement.id;
+    small.dataset.forId = inputElement.id;
 
     if (inputElement.nextSibling) {
         label.insertBefore(small, inputElement.nextSibling);
