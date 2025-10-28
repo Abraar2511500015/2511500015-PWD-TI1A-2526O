@@ -15,7 +15,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (nama.Value.trim().length < 3) {
         showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong.");
         isValid = false;
-    } else if (!/^[A-za-z\s]+$/.test(nama.value)) {
+    } else if (!/^[A-Za-z\s]+$/.test(nama.value)) {
         showError(nama, "Nama hanya boleh berisi huruf dan spasi.");
         isValid = false;
     }
