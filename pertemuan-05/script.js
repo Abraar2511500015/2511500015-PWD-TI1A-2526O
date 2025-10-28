@@ -12,7 +12,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     let isValid = true;
 
-    if (nama.ariaValueMax.trim().lenght < 3) {
+    if (nama.Value.trim().length < 3) {
         showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong.");
         isValid = false;
     } else if (!/^[A-za-z\s]+$/.test(nama.value)) {
