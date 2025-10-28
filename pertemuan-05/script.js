@@ -9,7 +9,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
     } else {
         alert("Terima kasih, " + nama + "!\nPesan anda telah dikirim.");
     }
-    
+});
+
 document.getElementById("menuToggle").addEventListener("click", function () {
     document.querySelector("nav").classList.toggle("active");
 });
