@@ -64,6 +64,8 @@ function showError(inputElement, message) {
     }
 
     inputElement.style.border = "1px solid red";
+
+    alignErrorMessage(small, inputElement);
 }
 
 function alignErrorMessage(smallEl, inputEl) {
