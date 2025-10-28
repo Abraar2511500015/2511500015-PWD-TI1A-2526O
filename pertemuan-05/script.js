@@ -1,7 +1,3 @@
-document.getElementById("menuToggle").addEventListener("click", function () {
-    document.querySelector("nav").classList.toggle("active");
-});
-
 document.querySelector("form").addEventListener("submit", function (e) {
     const nama = document.getElementById("txtNama").value.trim();
     const email = document.getElementById("txtEmail").value.trim();
@@ -204,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setupCharCountLayout();
 
     window.addEventListener('resize', applyResponsiveLayout);
-    
+
 });
 
 document.getElementById("txtPesan").addEventListener("input", function () {
