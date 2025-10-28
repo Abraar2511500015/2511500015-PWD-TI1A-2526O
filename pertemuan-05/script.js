@@ -88,8 +88,8 @@ function alignErrorMessage(smallEl, inputEl) {
 }
 
 window.addEventListener("resize", () => {
-    document.querySelectorAll(".error-msg").forEach(smallEl => {
-        const target = document.getElementById(smallEl.dataset.forId);
+    document.querySelectorAll(".error-msg").forEach(small => {
+        const target = document.getElementById(small.dataset.forId);
         if (target) alignErrorMessage(small, target);
     });
 });
