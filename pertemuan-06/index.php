@@ -38,7 +38,7 @@
             $Tempatlahir = "Sungailiat";
             $Tanggallahir = "26 Januari 2007";
             $Hobi = "Bermain game dan membaca novel";
-            $Pasangan = "Karinia Dwi Indah Suryani&heart;&#128525";
+            $Pasangan = "Karinia Dwi Indah Suryani&#heart;&#128525";
             $Pekerjaan ="Belum Ada";
             $NamaOrangTua = "Ayah Suhidin dan Ibu Affika Kushana";
             $NamaKakak = "-";
