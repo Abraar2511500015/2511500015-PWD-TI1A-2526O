@@ -1,5 +1,5 @@
 <?php
-session_start();
+  session_start();
   $sesname = $_SESSION["nama"];
   $sesemail = $_SESSION["email"];
   $sespesan = $_SESSION["pesan"];
