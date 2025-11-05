@@ -89,6 +89,10 @@ session_start();
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+      <p>Terimakasih sudah menghubungi kami:
+        <label>Nama: <strong><?php echo $sesname; ?></strong></label>
+        <label>Email: <strong><?php echo $sesemail; ?></strong></label>
+        <label>Pesan: <strong><?php echo $sespesan; ?></strong></label>
     </section>
   </main>
 
