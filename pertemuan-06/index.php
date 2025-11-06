@@ -209,7 +209,7 @@
             $status4 = ($grade4 == "D"  || $grade4 == "E") ? "Not Pass" : "Pass";
             $status5 = ($grade5 == "D"  || $grade5 == "E") ? "Not Pass" : "Pass";
 
-            $totalBobot = $bobot1 + $bobot2 + $bobot3 + $bobott4 + $bobot5;
+            $totalBobot = $bobot1 + $bobot2 + $bobot3 + $bobot4 + $bobot5;
             $totalSKS = $sksMatkul1 + $sksMatkul2 + $sksMatkul3 + $sksMatkul4 + $sksMatkul5;
             $IPK = $totalBobot / $totalSKS;
 
