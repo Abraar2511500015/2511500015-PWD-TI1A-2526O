@@ -190,6 +190,14 @@
             $grade3 = hitungGrade($nilaiHadir3, $nilaiAkhir3);
             $grade4 = hitungGrade($nilaiHadir4, $nilaiAkhir4);
             $grade5 = hitungGrade($nilaiHadir5, $nilaiAkhir5);
+
+            $mutu1 = hitungMutu($grade1);
+            $mutu2 = hitungMutu($grade2);
+            $mutu3 = hitungMutu($grade3);
+            $mutu4 = hitungMutu($grade4);
+            $mutu5 = hitungMutu($grade5);
+
+            
         <section id="contact">
             <h2>Kontak Saya</h2>
             <form action="" method="GET">
