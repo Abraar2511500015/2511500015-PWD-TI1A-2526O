@@ -213,6 +213,22 @@
             $totalSKS = $sksMatkul1 + $sksMatkul2 + $sksMatkul3 + $sksMatkul4 + $sksMatkul5;
             $IPK = $totalBobot / $totalSKS;
 
+            function display($nama, $sks, $hadir, $tugas, $uts, $uas, $akhir, $grade, $mutu, $bobot, $status)
+            {
+                echo "<h3>$nama</h3>";
+                echo "<p><strong>Kredit:</strong> $sks</p>";
+                echo "<p><strong>Kehadiran:</strong> $hadir</p>";
+                echo "<p><strong>Tugas:</strong> $tugas</p>";
+                echo "<p><strong>UTS:</strong> $uts</p>";
+                echo "<p><strong>UAS:</strong> $uas</p>";
+                echo "<p><strong>Nilai Akhir:</strong>" . number_format($akhir, 2) . "</p>";
+                echo "<p><strong>Huruf Mutu:</strong> $grade</p>";
+                echo "<p><strong>Indeks Nilai:</strong> $mutu</p>";
+                echo "<p><strong>bobot:</strong>" . number_format($bobot, 2) . "</p>";
+                echo "<p><strong>Status:</strong> $status</p>";
+                echo "<br>";
+            }
+
             
         <section id="contact">
             <h2>Kontak Saya</h2>
