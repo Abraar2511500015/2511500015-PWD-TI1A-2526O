@@ -197,7 +197,11 @@
             $mutu4 = hitungMutu($grade4);
             $mutu5 = hitungMutu($grade5);
 
-            
+            $bobot1 = $mutu1 * $sksMatkul1;
+            $bobot2 = $mutu2 * $sksMatkul2;
+            $bobot3 = $mutu3 * $sksMatkul3;
+            $bobot4 = $mutu4 * $sksMatkul4;
+            $bobot5 = $mutu4 * $sksMatkul5;
         <section id="contact">
             <h2>Kontak Saya</h2>
             <form action="" method="GET">
