@@ -202,6 +202,14 @@
             $bobot3 = $mutu3 * $sksMatkul3;
             $bobot4 = $mutu4 * $sksMatkul4;
             $bobot5 = $mutu4 * $sksMatkul5;
+
+            $status1 = ($grade1 == "D"  || $grade1 == "E") ? "Not Pass" : "Pass";
+            $status2 = ($grade2 == "D"  || $grade2 == "E") ? "Not Pass" : "Pass";
+            $status3 = ($grade3 == "D"  || $grade3 == "E") ? "Not Pass" : "Pass";
+            $status4 = ($grade4 == "D"  || $grade4 == "E") ? "Not Pass" : "Pass";
+            $status5 = ($grade5 == "D"  || $grade5 == "E") ? "Not Pass" : "Pass";
+
+            
         <section id="contact">
             <h2>Kontak Saya</h2>
             <form action="" method="GET">
