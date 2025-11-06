@@ -51,7 +51,8 @@ header li a:active {
 
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
-#contact:target~header nav a[href="#contact"] {
+#contact:target~header nav a[href="#contact"],
+#IPK:target~header nav a[href="#IPK"] {
   background: #fff;
   color: #ff009d;
   font-weight: bold;
