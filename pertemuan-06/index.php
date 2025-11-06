@@ -184,6 +184,12 @@
                         return 0.0;
                 }
             }
+
+            $grade1 = hitungGrade($nilaiHadir1, $nilaiAkhir1);
+            $grade2 = hitungGrade($nilaiHadir2, $nilaiAkhir2);
+            $grade3 = hitungGrade($nilaiHadir3, $nilaiAkhir3);
+            $grade4 = hitungGrade($nilaiHadir4, $nilaiAkhir4);
+            $grade5 = hitungGrade($nilaiHadir5, $nilaiAkhir5);
         <section id="contact">
             <h2>Kontak Saya</h2>
             <form action="" method="GET">
