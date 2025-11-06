@@ -233,7 +233,12 @@
             display($namaMatkul3, $sksMatkul3, $nilaiHadir3, $nilaiTugas3, $nilaiUTS3, $nilaiUAS3, $nilaiAkhir3, $grade3, $mutu3, $bobot3, $status3)
             display($namaMatkul4, $sksMatkul4, $nilaiHadir4, $nilaiTugas4, $nilaiUTS4, $nilaiUAS4, $nilaiAkhir4, $grade4, $mutu4, $bobot4, $status4)
             display($namaMatkul5, $sksMatkul5, $nilaiHadir5, $nilaiTugas5, $nilaiUTS5, $nilaiUAS5, $nilaiAkhir5, $grade5, $mutu5, $bobot5, $status5)
-            
+
+            echo "<h3>Total Bobot: " . number_format($totalBobot, 2) . "</h3>";
+            echo "<h3>Total SKS: $totalSKS</h3>";
+            echo "<br><h2>IPK: " . number_format($IPK, 2) . "</h2>";
+            ?>
+
         <section id="contact">
             <h2>Kontak Saya</h2>
             <form action="" method="GET">
