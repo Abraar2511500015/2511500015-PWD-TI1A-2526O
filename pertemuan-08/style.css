@@ -51,7 +51,8 @@ header li a:active {
 
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
-#contact:target~header nav a[href="#contact"] {
+#contact:target~header nav a[href="#contact"],
+#PendaftaranProfilPengunjung:target~header nav a[href="#PendaftaranProfilPengunjung"] {
   background: #fff;
   color: #003366;
   font-weight: bold;
