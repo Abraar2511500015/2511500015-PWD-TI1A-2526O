@@ -52,7 +52,7 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <section id="Pendaftaran Profil Pengunjung">
+    <section id="PendaftaranProfilPengunjung">
       <h2>Pendaaftaran Profil Pengunjung </h2>
       <form action="proses.php" method="POST">
 
