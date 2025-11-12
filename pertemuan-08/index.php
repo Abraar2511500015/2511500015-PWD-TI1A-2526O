@@ -138,7 +138,9 @@ endif;
           <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required autocomplete="hobi">
         </label>
 
-
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required autocomplete="pasangan">
+        </label>
 
   </main>
 
