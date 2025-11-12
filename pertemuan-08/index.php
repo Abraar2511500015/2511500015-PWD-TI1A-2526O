@@ -146,6 +146,9 @@ endif;
           <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="pekerjaan">
         </label>
 
+        <label for="txtNama Orang Tua"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNama Orang Tua" name="txtNama Orang Tua" placeholder="Masukkan Nama Orang Tua" required autocomplete="nama orang tua">
+        </label>
 
   </main>
 
