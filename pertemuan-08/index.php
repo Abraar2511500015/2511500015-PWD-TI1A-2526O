@@ -75,7 +75,7 @@ endif;
       <p><strong>Tanggal Lahir:</strong> 26 Januari 2007</p>
       <p><strong>Hobi:</strong> Bermain game dan membaca novel </p>
       <p><strong>Pasangan:</strong> Karinia Dwi Indah Suryani &#128525;&hearts;</p>
-      <p><strong>Pekerjaan:</strong> Mahasiswa &copy; 2025</p>
+      <p><strong>Pekerjaan:</strong> Mahasiswa</p>
       <p><strong>Nama Orang Tua:</strong> Bapak Suhidin dan Ibu Affika Kushana</p>
       <p><strong>Nama Kakak:</strong> <?php echo $sespesan ?></p>
       <p><strong>Nama Adik:</strong> Moch. Faaiq Al-Tsaqiif</p>
@@ -114,10 +114,17 @@ endif;
 
 
     </section>
+    <section id="Pendaftaran Profil Pengunjung">
+      <h2>Pendaaftaran Profil Pengunjung </h2>
+      <form action="proses.php" method="POST">
+
+      <label for="txtNim"><span>Nim:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
+        </label>
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Moh. Sayyid Abraar [2511500015]</p>
   </footer>
 
   <script src="script.js"></script>
