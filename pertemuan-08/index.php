@@ -52,6 +52,50 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+    <section id="Pendaftaran Profil Pengunjung">
+      <h2>Pendaaftaran Profil Pengunjung </h2>
+      <form action="proses.php" method="POST">
+
+      <label for="txtNim"><span>Nim:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
+        </label>
+
+      <label for="txtNama Lengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNama Lengkap" name="txtNama Lengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="nama lengkap">
+        </label>
+
+      <label for="txtTempat Lahir"><span>Tempat Lahir:</span>
+          <input type="text" id="txtTempat Lahir" name="txtTempat Lahir" placeholder="Masukkan Tempat Lahir" required autocomplete="tempat lahir">
+        </label>
+
+      <label for="txtTanggal Lahir"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTanggal Lahir" name="txtTanggal Lahir" placeholder="Masukkan Tanggal Lahir" required autocomplete="tanggal lahir">
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required autocomplete="hobi">
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required autocomplete="pasangan">
+        </label>
+
+        <label for="txtPekerjaan"><span>Pekerjaan:</span>
+          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="pekerjaan">
+        </label>
+
+        <label for="txtNama Orang Tua"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNama Orang Tua" name="txtNama Orang Tua" placeholder="Masukkan Nama Orang Tua" required autocomplete="nama orang tua">
+        </label>
+
+        <label for="txtNama kakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNama Kakak" name="txtNama Kakak" placeholder="Masukkan Nama Kakak" required autocomplete="nama kakak">
+        </label>
+
+        <label for="txtNama Adik"><span>Nama Adik:</span>
+          <input type="text" id="txtNama Adik" name="txtNama Adik" placeholder="Masukkan Nama Adik" required autocomplete="nama adik">
+        </label>
+
     <section id="about">
       <?php
       $nim = 2511500015;
@@ -114,49 +158,7 @@ endif;
 
 
     </section>
-    <section id="Pendaftaran Profil Pengunjung">
-      <h2>Pendaaftaran Profil Pengunjung </h2>
-      <form action="proses.php" method="POST">
-
-      <label for="txtNim"><span>Nim:</span>
-          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
-        </label>
-
-      <label for="txtNama Lengkap"><span>Nama Lengkap:</span>
-          <input type="text" id="txtNama Lengkap" name="txtNama Lengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="nama lengkap">
-        </label>
-
-      <label for="txtTempat Lahir"><span>Tempat Lahir:</span>
-          <input type="text" id="txtTempat Lahir" name="txtTempat Lahir" placeholder="Masukkan Tempat Lahir" required autocomplete="tempat lahir">
-        </label>
-
-      <label for="txtTanggal Lahir"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTanggal Lahir" name="txtTanggal Lahir" placeholder="Masukkan Tanggal Lahir" required autocomplete="tanggal lahir">
-        </label>
-
-        <label for="txtHobi"><span>Hobi:</span>
-          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required autocomplete="hobi">
-        </label>
-
-        <label for="txtPasangan"><span>Pasangan:</span>
-          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required autocomplete="pasangan">
-        </label>
-
-        <label for="txtPekerjaan"><span>Pekerjaan:</span>
-          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="pekerjaan">
-        </label>
-
-        <label for="txtNama Orang Tua"><span>Nama Orang Tua:</span>
-          <input type="text" id="txtNama Orang Tua" name="txtNama Orang Tua" placeholder="Masukkan Nama Orang Tua" required autocomplete="nama orang tua">
-        </label>
-
-        <label for="txtNama kakak"><span>Nama Kakak:</span>
-          <input type="text" id="txtNama Kakak" name="txtNama Kakak" placeholder="Masukkan Nama Kakak" required autocomplete="nama kakak">
-        </label>
-
-        <label for="txtNama Adik"><span>Nama Adik:</span>
-          <input type="text" id="txtNama Adik" name="txtNama Adik" placeholder="Masukkan Nama Adik" required autocomplete="nama adik">
-        </label>
+    
   </main>
 
   <footer>
