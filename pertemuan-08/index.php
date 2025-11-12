@@ -100,6 +100,19 @@ endif;
         <button type="reset">Batal</button>
       </form>
 
+      <?php if (!empty($sesnama)): ?>
+        <br><hr>
+        <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
+        <p><strong>Nama Lengkap :</strong> <?php echo $sesnamalengkap ?></p>
+        <p><strong>Tempat Lahir :</strong> <?php echo $sestempatlahir ?></p>
+        <p><strong>Tanggal Lahir :</strong> <?php echo $sestanggallahir ?></p>
+        <p><strong>Hobi :</strong> <?php echo $seshobi ?></p>
+        <p><strong>Pasangan :</strong> <?php echo $sespasangan ?></p>
+        <p><strong>Pekerjaan :</strong> <?php echo $sespekerjaan ?></p>
+        <p><strong>Nama Orang Tua :</strong> <?php echo $sesnamaorangtua ?></p>
+        <p><strong>Nama Kakak :</strong> <?php echo $sesnamakakak ?></p>
+        <p><strong>Nama Adik :</strong> <?php echo $sesnamaadik ?></p>
+      <?php endif; ?>
 
 </section>
 
@@ -160,16 +173,6 @@ endif;
         <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
-        <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
-        <p><strong>Nama Lengkap :</strong> <?php echo $sesnamalengkap ?></p>
-        <p><strong>Tempat Lahir :</strong> <?php echo $sestempatlahir ?></p>
-        <p><strong>Tanggal Lahir :</strong> <?php echo $sestanggallahir ?></p>
-        <p><strong>Hobi :</strong> <?php echo $seshobi ?></p>
-        <p><strong>Pasangan :</strong> <?php echo $sespasangan ?></p>
-        <p><strong>Pekerjaan :</strong> <?php echo $sespekerjaan ?></p>
-        <p><strong>Nama Orang Tua :</strong> <?php echo $sesnamaorangtua ?></p>
-        <p><strong>Nama Kakak :</strong> <?php echo $sesnamakakak ?></p>
-        <p><strong>Nama Adik :</strong> <?php echo $sesnamaadik ?></p>
       <?php endif; ?>
 
 
