@@ -10,4 +10,5 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
   <li>Saya membuat section#PendaftaranProfilPengunjung di index.php</li>
   <li>saya men styling section#PendaftaranProfilPengunjung</li>
+  <li>saya menambahkan session_start di proses.php</li>
 </ol>
