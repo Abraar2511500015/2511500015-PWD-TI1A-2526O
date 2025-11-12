@@ -142,6 +142,11 @@ endif;
           <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required autocomplete="pasangan">
         </label>
 
+        <label for="txtPekerjaan"><span>Pekerjaan:</span>
+          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="pekerjaan">
+        </label>
+
+
   </main>
 
   <footer>
