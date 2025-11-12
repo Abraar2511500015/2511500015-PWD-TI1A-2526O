@@ -108,7 +108,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     let isValid = true;
 
     document.querySelectorAll(".error-msg").forEach(el => el.remove());
-    [nama, email, pesan].forEach(el => el.style.border = "");
+    [nama, email, pesan, nim, namalengkap, tempatlahir, tanggallahir, hobi, pasangan, pekerjaan, namaorangtua, namakakak, namaadik].forEach(el => el.style.border = "");
 
     if (nama.value.trim().length < 3) {
         showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong.");
