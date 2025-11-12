@@ -8,6 +8,6 @@ Kelompok: TI1A<br>
 <br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
-  <li>Saya membuat section#PendaftaranProfilPengunjung</li>
+  <li>Saya membuat section#PendaftaranProfilPengunjung di index.php</li>
   <li>saya men styling section#PendaftaranProfilPengunjung</li>
 </ol>
