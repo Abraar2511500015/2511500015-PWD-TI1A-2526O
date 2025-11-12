@@ -121,6 +121,11 @@ endif;
       <label for="txtNim"><span>Nim:</span>
           <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
         </label>
+
+      <label for="txtNama Lengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNama Lengkap" name="txtNama Lengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="nama lengkap">
+        </label>
+
   </main>
 
   <footer>
