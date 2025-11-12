@@ -102,6 +102,7 @@ endif;
 
       <?php if (!empty($sesnama)): ?>
         <br><hr>
+        <h2>Yang menghubungi kami</h2>
         <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
         <p><strong>Nama Lengkap :</strong> <?php echo $sesnamalengkap ?></p>
         <p><strong>Tempat Lahir :</strong> <?php echo $sestempatlahir ?></p>
