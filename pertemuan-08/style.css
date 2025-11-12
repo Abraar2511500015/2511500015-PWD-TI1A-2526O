@@ -110,7 +110,9 @@ header li a:active {
 }
 
 #contact input,
-#contact textarea {
+#contact textarea,
+#PendaftaranProfilPengunjung input,
+#PendaftaranProfilPengunjung textarea {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
