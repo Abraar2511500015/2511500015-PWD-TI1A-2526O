@@ -96,8 +96,10 @@ endif;
           <input type="text" id="txtNama Adik" name="txtNama Adik" placeholder="Masukkan Nama Adik" required autocomplete="nama adik">
         </label>
 
-         <button type="submit">Kirim</button>
+        <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
+</form>
+</section>
 
     <section id="about">
       <?php
