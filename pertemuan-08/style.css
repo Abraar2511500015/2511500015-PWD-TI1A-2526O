@@ -157,7 +157,8 @@ header li a:active {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-#contact button[type="reset"]:hover {
+#contact button[type="reset"]:hover,
+#PendaftaranProfilPengunjung button[type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }
