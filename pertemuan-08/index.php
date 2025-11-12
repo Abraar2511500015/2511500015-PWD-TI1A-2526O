@@ -54,11 +54,11 @@ endif;
 
     <section id="about">
       <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
+      $nim = 2511500015;
+      $NIM = '2511500015';
+      $nama = "Moh. Sayyid Abraar";
+      $Nama = 'Abraar';
+      $tempat = "Selindung";
       ?>
       <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong>
@@ -71,14 +71,14 @@ endif;
         echo $Nama;
         ?> &#128526;
       </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
-      <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <p><strong>Tempat Lahir:</strong> Sungailiat</p>
+      <p><strong>Tanggal Lahir:</strong> 26 Januari 2007</p>
+      <p><strong>Hobi:</strong> Bermain game dan membaca novel </p>
+      <p><strong>Pasangan:</strong> Karinia Dwi Indah Suryani &#128525;&hearts;</p>
+      <p><strong>Pekerjaan:</strong> Mahasiswa &copy; 2025</p>
+      <p><strong>Nama Orang Tua:</strong> Bapak Suhidin dan Ibu Affika Kushana</p>
+      <p><strong>Nama Kakak:</strong> <?php echo $sespesan ?></p>
+      <p><strong>Nama Adik:</strong> Moch. Faaiq Al-Tsaqiif</p>
     </section>
 
     <section id="contact">
