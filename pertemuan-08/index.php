@@ -53,7 +53,7 @@ endif;
     </section>
 
     <section id="PendaftaranProfilPengunjung">
-      <h2>PendaaftaranProfilPengunjung </h2>
+      <h2>Pendaaftaran Profil Pengunjung </h2>
       <form action="proses.php" method="POST">
 
       <label for="txtNim"><span>Nim:</span>
