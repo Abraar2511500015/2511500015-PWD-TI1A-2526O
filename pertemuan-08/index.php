@@ -100,7 +100,7 @@ endif;
         <button type="reset">Batal</button>
       </form>
 
-      <?php if (!empty($sesnama)): ?>
+      <?php if (!empty($sesnim)): ?>
         <br><hr>
         <h2>Yang menghubungi kami</h2>
         <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
