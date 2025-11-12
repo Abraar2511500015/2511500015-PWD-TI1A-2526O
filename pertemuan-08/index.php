@@ -130,6 +130,10 @@ endif;
           <input type="text" id="txtTempat Lahir" name="txtTempat Lahir" placeholder="Masukkan Tempat Lahir" required autocomplete="tempat lahir">
         </label>
 
+      <label for="txtTanggal Lahir"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTanggal Lahir" name="txtTanggal Lahir" placeholder="Masukkan Tanggal Lahir" required autocomplete="tanggal lahir">
+        </label>
+
 
   </main>
 
