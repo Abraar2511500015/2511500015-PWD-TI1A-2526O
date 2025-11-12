@@ -1,12 +1,13 @@
 # pertemuan-08
 
-silahkan sesuaikan dengan milik kalian masing-masing:<br><br>
+
 Hari ini, Rabu 12.NOV.2025, saya:<br>
-NIM: 0344300002<br>
-Nama: Yohanes Setiawan Japriadi<br>
+NIM: 2511500015<br>
+Nama: Moh. Sayyid Abraar<br>
 Kelompok: TI1A<br>
 <br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
-  <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
+  <li>Saya membuat section#PendaftaranProfilPengunjung</li>
+  <li>saya men styling section#PendaftaranProfilPengunjung</li>
 </ol>
