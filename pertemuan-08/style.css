@@ -99,7 +99,8 @@ header li a:active {
 }
 
 #about strong,
-#contact label>span {
+#contact label>span,
+#PendaftaranProfilPengunjung label>span {
   min-width: 180px;
   color: #003366;
   font-weight: 600;
