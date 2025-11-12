@@ -154,6 +154,9 @@ endif;
           <input type="text" id="txtNama Kakak" name="txtNama Kakak" placeholder="Masukkan Nama Kakak" required autocomplete="nama kakak">
         </label>
 
+        <label for="txtNama Adik"><span>Nama Adik:</span>
+          <input type="text" id="txtNama Adik" name="txtNama Adik" placeholder="Masukkan Nama Adik" required autocomplete="nama adik">
+        </label>
   </main>
 
   <footer>
