@@ -244,7 +244,10 @@ footer {
 
   #contact input,
   #contact textarea,
-  #contact button {
+  #contact button,
+  #PendaftaranProfilPengunjung input,
+  #PendaftaranProfilPengunjung textarea,
+  #PendaftaranProfilPengunjung button {
     width: 100%;
   }
 }
