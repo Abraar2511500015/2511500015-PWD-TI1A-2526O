@@ -160,7 +160,7 @@ endif;
         <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
-         <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
+        <p><strong>Nim :</strong> <?php echo $sesnim ?></p>
         <p><strong>Nama Lengkap :</strong> <?php echo $sesnamalengkap ?></p>
         <p><strong>Tempat Lahir :</strong> <?php echo $sestempatlahir ?></p>
         <p><strong>Tanggal Lahir :</strong> <?php echo $sestanggallahir ?></p>
