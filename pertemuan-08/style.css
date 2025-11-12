@@ -228,7 +228,8 @@ footer {
   }
 
   #about p,
-  #contact label {
+  #contact label,
+  #PendaftaranProfilPengunjung label {
     flex-direction: column;
     align-items: flex-start;
   }
