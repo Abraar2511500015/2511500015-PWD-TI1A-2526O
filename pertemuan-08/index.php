@@ -126,6 +126,11 @@ endif;
           <input type="text" id="txtNama Lengkap" name="txtNama Lengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="nama lengkap">
         </label>
 
+      <label for="txtTempat Lahir"><span>Tempat Lahir:</span>
+          <input type="text" id="txtTempat Lahir" name="txtTempat Lahir" placeholder="Masukkan Tempat Lahir" required autocomplete="tempat lahir">
+        </label>
+
+
   </main>
 
   <footer>
