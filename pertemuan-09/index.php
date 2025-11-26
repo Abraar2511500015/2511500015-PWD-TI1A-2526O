@@ -123,7 +123,7 @@ endif;
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?php foreach ($fieldconfig as $kunci => $metadata): ?>
+      <?php foreach($fieldConfig as $kunci => $metadata): ?>
          <p>
           <strong><?= $metadata["label"] ?></strong>
           <?= htmlspecialchars( $biodata[$kunci] ?? "") ?>
