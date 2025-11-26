@@ -128,7 +128,7 @@ endif;
           <strong><?= $metadata["label"] ?></strong>
           <?= htmlspecialchars(string: $biodata[$kunci] ?? "") ?>
           <?= $metadata["suffix"] ?>
-       </p>
+        </p>
       <?php endforeach; ?>
 
       <p><strong>NIM:</strong> <?= $txtNim ?></p>
