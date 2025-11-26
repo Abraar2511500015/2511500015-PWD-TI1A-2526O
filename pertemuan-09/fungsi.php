@@ -4,14 +4,14 @@ function bersihkan($str)
     return htmlspecialchars(trim($str));
 }
 
-function tidakkosong($str)
+function tidakKosong($str)
 {
-    return streln(trim($str)) > 0;
+    return strlen(trim($str)) > 0;
 }
 
-function formattanggal($str)
+function formatTanggal($tgl)
 {
-    return date("d M Y", strtotime($str));
+    return date("d M Y", strtotime($tgl));
 }
 
 function tampilkanBiodata($conf, $arr)
@@ -21,6 +21,8 @@ function tampilkanBiodata($conf, $arr)
         $label = $v["label"];
         $nilai = bersihkan($arr[$k] ?? '');
         $suffix = $v["suffix"];
+
+        $html .= "<p><strong>{$label}</strong> {$nilai}{$suffix}</p>";
     }
     return $html
 }
