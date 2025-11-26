@@ -18,7 +18,6 @@ if (isset($_SESSION["sespesan"])):
   $sespesan = $_SESSION["sespesan"];
 endif;
 
-
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +50,7 @@ endif;
       <h2>Selamat Datang</h2>
       <?php
       echo "halo dunia!<br>";
-      echo "nama saya hadi";
+      echo "nama saya Abraar";
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
@@ -163,7 +162,7 @@ endif;
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Moh. Sayyid Abraar [2511500015]</p>
   </footer>
 
   <script src="script.js"></script>
