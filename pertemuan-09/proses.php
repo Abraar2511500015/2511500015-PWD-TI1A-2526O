@@ -18,7 +18,7 @@ $arrBiodata = [
     "ortu" => $_POST["txtNmOrtu"] ?? "",
     "kakak" => $_POST["txtNmKakak"] ?? "",
     "adik" => $_POST["txtNmAdik"] ?? "",
-]
+];
 
 $_SESSION["txtNim"] = $txtNim;
 $_SESSION["txtNmLengkap"] = $txtNmLengkap;
