@@ -33,7 +33,7 @@ require_once __DIR__ . '/fungsi.php';
       <h2>Selamat Datang</h2>
       <?php
       echo "halo dunia!<br>";
-      echo "nama saya hadi";
+      echo "nama saya abraar";
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
