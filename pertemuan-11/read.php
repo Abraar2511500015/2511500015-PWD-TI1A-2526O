@@ -15,7 +15,7 @@ $q = mysqli_query($conn, $sql);
 
   <?php while ($row = mysqli_fetch_assoc($q)): ?>
     <tr>
-    <td><?= $row['nomor']; ?></td>
+    <td><?= $row['cnomor']; ?></td>
     <td><?= $row['cid']; ?></td>
     <td><?= htmlspecialchars($row['cnama']); ?></td>
     <td><?= htmlspecialchars($row['cemail']); ?></td>

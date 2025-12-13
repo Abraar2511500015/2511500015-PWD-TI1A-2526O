@@ -74,6 +74,13 @@ if (!mysqli_stmt_execute($stmt)) {
 
 mysqli_stmt_close($stmt);
 
+$arrContact = [
+  "nama" => $_POST["txtNama"] ?? "",
+  "email" => $_POST["txtEmail"] ?? "",
+  "pesan" => $_POST["txtPesan"] ?? ""
+];
+$_SESSION["contact"] = $arrContact;
+
 $arrBiodata = [
   "nim" => $_POST["txtNim"] ?? "",
   "nama" => $_POST["txtNmLengkap"] ?? "",
