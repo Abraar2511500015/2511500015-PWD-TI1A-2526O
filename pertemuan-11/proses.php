@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-if ($SERVER['REQUEST_METHOD'] !== "POST") {
+if ($SERVER['REQUEST_METHOD'] !== 'POST') {
   $_SESSION['flash_error'] = 'Akses tidak valid.';
   redirect_ke('index.php#contact');
 }
@@ -21,11 +21,19 @@ if ($nama === '') {
 if ($email === '') {
   $errors[] = 'Email wajib diisi.';
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  $errors[] = 'Format email tidak valid.';
+  $errors[] = 'Format e-mail tidak valid.';
 }
 
 if ($pesan === '') {
   $errors[] = 'Pesan wajib diisi.';
+}
+
+if (mb_strelen($nama) < 3) {
+  $errors[] = 'Nama minimal 3 karakter.';
+}
+
+if (mb_strlen($pesan) < 10) {
+  $errors[] = 'Pesan minimal 10 karakter.';
 }
 
 if (!empty($errors)) {
