@@ -6,20 +6,23 @@ $q = mysqli_query($conn, $sql);
 ?>
 <table border="1" cellpadding="8" cellspacing="0">
   <tr>
-    <th>Nomor</th>
+    <th>No</th>
     <th>ID</th>
     <th>Nama</th>
     <th>Email</th>
     <th>Pesan</th>
+    <th>Tanggal dan Waktu</th>
   </tr>
 
-  <?php while ($row = mysqli_fetch_assoc($q)): ?>
+  <?php $no = 1; 
+    while ($row = mysqli_fetch_assoc($q)): ?>
     <tr>
-    <td><?= $row['cnomor']; ?></td>
+    <td><?= $no++; ?></td>
     <td><?= $row['cid']; ?></td>
     <td><?= htmlspecialchars($row['cnama']); ?></td>
     <td><?= htmlspecialchars($row['cemail']); ?></td>
     <td><?= nl2br(htmlspecialchars($row['cpesan'])); ?></td>
+    <td><?= $row['dcreated_at']; ?></td>
     </tr>
     <?php endwhile; ?>
 </table>

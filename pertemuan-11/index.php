@@ -152,6 +152,12 @@ require_once __DIR__ . '/fungsi.php';
           <small id="charCount">0/200 karakter</small>
         </label>
 
+        <label for="txtCapctha_Sederhana"><span>2+3?:</span>
+          <input type="text" id="txtCapctha_Sederhana" name="txtCapctha_Sederhana" placeholder="Masukkan jawaban" 
+            required autocomplete="capctha_sederhana"
+            value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
+        </label>
+
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>

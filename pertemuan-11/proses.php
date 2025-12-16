@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-if ($SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   $_SESSION['flash_error'] = 'Akses tidak valid.';
   redirect_ke('index.php#contact');
 }
@@ -28,7 +28,7 @@ if ($pesan === '') {
   $errors[] = 'Pesan wajib diisi.';
 }
 
-if (mb_strelen($nama) < 3) {
+if (mb_strlen($nama) < 3) {
   $errors[] = 'Nama minimal 3 karakter.';
 }
 
