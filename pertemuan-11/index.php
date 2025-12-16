@@ -152,9 +152,9 @@ require_once __DIR__ . '/fungsi.php';
           <small id="charCount">0/200 karakter</small>
         </label>
 
-        <label for="txtCapctha_Sederhana"><span>2+3?:</span>
-          <input type="text" id="txtCapctha_Sederhana" name="txtCapctha_Sederhana" placeholder="Masukkan jawaban" 
-            required autocomplete="capctha_sederhana"
+        <label for="txtCaptcha_Sederhana"><span>2+3?:</span>
+          <input type="text" id="txtCaptcha_Sederhana" name="txtCaptcha_Sederhana" placeholder="Masukkan jawaban" 
+            required autocomplete="captcha_sederhana"
             value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
         </label>
 

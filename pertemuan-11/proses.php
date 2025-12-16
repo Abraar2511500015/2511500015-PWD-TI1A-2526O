@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $nama = bersihkan($_POST['txtNama'] ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? ''); 
 $pesan = bersihkan($_POST['txtPesan'] ?? '');
-$captcha = bersihkan($_POST['txtCapctha_Sederhana'] ?? '');
+$captcha = bersihkan($_POST['txtCaptcha_Sederhana'] ?? '');
+$tanggal = date("Y-m-d H:i:s");
 
 
 $errors = [];
@@ -52,6 +53,7 @@ if (!empty($errors)) {
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
+    'tanggal' => $tanggal,
   ];
 
 
@@ -78,6 +80,7 @@ if (!mysqli_stmt_execute($stmt)) {
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
+    'tanggal' => $tanggal,
   ];
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
   redirect_ke('index.php#contact');
@@ -88,7 +91,8 @@ mysqli_stmt_close($stmt);
 $arrContact = [
   "nama" => $_POST["txtNama"] ?? "",
   "email" => $_POST["txtEmail"] ?? "",
-  "pesan" => $_POST["txtPesan"] ?? ""
+  "pesan" => $_POST["txtPesan"] ?? "",
+  "tanggal" => date("Y-m-d H:i:s"),
 ];
 $_SESSION["contact"] = $arrContact;
 

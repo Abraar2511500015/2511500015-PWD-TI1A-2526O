@@ -2,9 +2,11 @@
 require 'koneksi.php';
 
 $fieldContact = [
+    "no" => ["label" => "No:", "suffix" => ""],
     "nama" => ["label" => "Nama:", "suffix" => ""],
     "email" => ["label" => "Email:", "suffix" => ""],
-    "pesan" => ["label" => "Pesan Anda:", "suffix" => ""]
+    "pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
+    "tanggal" => ["label" => "Tanggal dan Waktu:", "suffix" => ""],
 ];
 
 $sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
@@ -16,9 +18,11 @@ if (!$q) {
 } else {
     while ($row = mysqli_fetch_assoc($q)) {
         $arrContact = [
+            "no" => "",
             "nama" => $row['cnama'] ?? "",
             "email" => $row['cemail'] ?? "",
-            "pesan" => $row['cpesan'] ?? ""
+            "pesan" => $row['cpesan'] ?? "",
+            "tanggal" => $row['dcreated_at'] ?? "",
         ];
         echo tampilkanBiodata($fieldContact, $arrContact);
 }
