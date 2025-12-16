@@ -3,6 +3,11 @@ session_start();
 require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
+if($_POST['captcha']!=$_POST['captcha_jawaban']){
+  echo "Captcha salah!";
+  exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   $_SESSION['flash_error'] = 'Akses tidak valid.';
   redirect_ke('index.php#contact');
@@ -11,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $nama = bersihkan($_POST['txtNama'] ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? ''); 
 $pesan = bersihkan($_POST['txtPesan'] ?? '');
+$captcha = bersihkan($_POST['txtCapctha_Sederhana'] ?? '');
+
 
 $errors = [];
 
@@ -34,6 +41,10 @@ if (mb_strlen($nama) < 3) {
 
 if (mb_strlen($pesan) < 10) {
   $errors[] = 'Pesan minimal 10 karakter.';
+}
+
+if($captcha !=5) {
+  die("Captcha salah!");
 }
 
 if (!empty($errors)) {
@@ -60,7 +71,7 @@ mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
 
 if (!mysqli_stmt_execute($stmt)) {
   unset($_SESSION['old']);
-  $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
+  $_SESSION['flash_error'] = 'Data gagal disimpan. Silahkan coba lagi.';
   redirect_ke('index.php#contact');
 } else {
   $_SESSION['$old'] = [
@@ -68,7 +79,7 @@ if (!mysqli_stmt_execute($stmt)) {
     'email' => $email,
     'pesan' => $pesan,
   ];
-  $_SESSION['flash_error'] = 'Data gagal disimpan. Silahkan coba lagi.';
+  $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
   redirect_ke('index.php#contact');
 }
 
