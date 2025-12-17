@@ -4,7 +4,7 @@ require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
 if($_POST['txtCaptcha_Sederhana']!=$_POST['txtCaptcha_Sederhana']) {
-  echo "Captcha salah!";
+  echo "jawaban captcha 5";
   exit;
 }
 
@@ -39,7 +39,7 @@ if ($pesan === '') {
 
 if ($captcha === '') {
   $errors[] = 'Jawaban captcha 5!.';
-}   
+}
 
 if (mb_strlen($nama) < 3) {
   $errors[] = 'Nama minimal 3 karakter.';
@@ -47,10 +47,6 @@ if (mb_strlen($nama) < 3) {
 
 if (mb_strlen($pesan) < 10) {
   $errors[] = 'Pesan minimal 10 karakter.';
-}
-
-if(mb_strlen($captcha) != 5) {
-  $errors[] = 'Jawaban captcha 5!.';
 }
 
 if (!empty($errors)) {
