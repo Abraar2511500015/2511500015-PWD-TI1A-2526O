@@ -6,6 +6,7 @@ $fieldContact = [
     "nama" => ["label" => "Nama:", "suffix" => ""],
     "email" => ["label" => "Email:", "suffix" => ""],
     "pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
+    "captcha" => ["label" => "Captcha:", "suffix" => ""],
     "tanggal" => ["label" => "Tanggal dan Waktu:", "suffix" => ""],
 ];
 
@@ -22,6 +23,7 @@ if (!$q) {
             "nama" => $row['cnama'] ?? "",
             "email" => $row['cemail'] ?? "",
             "pesan" => $row['cpesan'] ?? "",
+            "captcha" => $row['ccaptcha'] ?? "",
             "tanggal" => $row['dcreated_at'] ?? "",
         ];
         echo tampilkanBiodata($fieldContact, $arrContact);
