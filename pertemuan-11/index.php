@@ -153,7 +153,7 @@ require_once __DIR__ . '/fungsi.php';
         </label>
 
         <label for="txtCaptcha_Sederhana"><span>2+3?:</span>
-          <input type="text" id="txtCaptcha_Sederhana" name="txtCaptcha_Sederhana" placeholder="Masukkan jawaban" 
+          <input type="number" id="txtCaptcha_Sederhana" name="txtCaptcha_Sederhana" placeholder="Masukkan jawaban" 
             required autocomplete="captcha_sederhana"
             value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
         </label>

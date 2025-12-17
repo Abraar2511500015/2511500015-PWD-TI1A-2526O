@@ -49,13 +49,16 @@ if (mb_strlen($pesan) < 10) {
   $errors[] = 'Pesan minimal 10 karakter.';
 }
 
+if ($captcha!=="5") {
+  $errors[] = 'Jawaban '. $captcha.' captcha salah.';
+}
+
 if (!empty($errors)) {
   $_SESSION['$old'] = [
     'no' => "",
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
-    'captcha' => $captcha,
     'tanggal' => $tanggal,
   ];
 
@@ -84,7 +87,6 @@ if (!mysqli_stmt_execute($stmt)) {
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
-    'captcha' => $captcha,
     'tanggal' => $tanggal,
   ];
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
@@ -98,7 +100,6 @@ $arrContact = [
   "nama" => $_POST["txtNama"] ?? "",
   "email" => $_POST["txtEmail"] ?? "",
   "pesan" => $_POST["txtPesan"] ?? "",
-  "captcha" => $_POST["txtCaptcha_Sederhana"] ?? "",
   "tanggal" => date("Y-m-d H:i:s"),
 ];
 $_SESSION["contact"] = $arrContact;
