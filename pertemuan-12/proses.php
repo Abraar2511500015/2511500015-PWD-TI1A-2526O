@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-if($_POST['captcha']!=$_POST['captcha_jawaban']){
+if($_POST['txtCaptcha_Sederhana']!=$_POST['txtCaptcha_Sederhana']) {
   echo "Captcha salah!";
   exit;
 }
@@ -55,6 +55,7 @@ if (!empty($errors)) {
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
+    'captcha' => $captcha,
     'tanggal' => $tanggal,
   ];
 
@@ -83,6 +84,7 @@ if (!mysqli_stmt_execute($stmt)) {
     'nama' => $nama,
     'email' => $email,
     'pesan' => $pesan,
+    'captcha' => $captcha,
     'tanggal' => $tanggal,
   ];
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
@@ -96,6 +98,7 @@ $arrContact = [
   "nama" => $_POST["txtNama"] ?? "",
   "email" => $_POST["txtEmail"] ?? "",
   "pesan" => $_POST["txtPesan"] ?? "",
+  "captcha" => $_POST["txtCaptcha_Sederhana"] ?? "",
   "tanggal" => date("Y-m-d H:i:s"),
 ];
 $_SESSION["contact"] = $arrContact;
