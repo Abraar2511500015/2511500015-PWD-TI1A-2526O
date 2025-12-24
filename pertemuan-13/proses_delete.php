@@ -23,7 +23,7 @@
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('edit.php');
+    redirect_ke('read.php');
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
@@ -41,4 +41,4 @@
   #tutup statement
   mysqli_stmt_close($stmt);
 
-  redirect_ke('edit.php');
+  redirect_ke('read.php');
