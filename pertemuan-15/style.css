@@ -89,6 +89,7 @@ header li a:active {
 
 #about p,
 #contact p,
+#biodata p,
 #contact label,
 #biodata label {
   display: flex;
@@ -231,6 +232,7 @@ footer {
 
   #about p,
   #contact p,
+  #biodata p,
   #contact label,
   #biodata label {
     flex-direction: column;
