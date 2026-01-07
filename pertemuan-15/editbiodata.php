@@ -123,63 +123,63 @@
           <input type="text" name="cid" value="<?= (int)$cid; ?>">
 
           <label for="txtNim"><span>NIM:</span>
-            <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM"
-              required autocomplete="nim"
-              value="<?= htmlspecialchars($nim); ?>">
-            </label>
+            <input type="text" id="txtNim" name="txtNimEd" 
+              placeholder="Masukkan NIM" required autocomplete="nim"
+              value="<?= !empty($nim) ? $nim : '' ?>">
+          </label>
 
             <label for="txtNamaLengkap"><span>Nama Lengkap:</span>
-                <input type="text" id="txtNamaLengkap" name="txtNamaLengkap" placeholder="Masukkan Nama Lengkap"
-                    required autocomplete="name"
-                    value="<?= htmlspecialchars($nama); ?>">
+                <input type="text" id="txtNamaLengkap" name="txtNamaLengkapEd" 
+                placeholder="Masukkan Nama Lengkap" required autocomplete="name"
+                value="<?= !empty($nama) ? $nama : '' ?>">
             </label>
 
             <label for="txtTempatLahir"><span>Tempat Lahir:</span>
-                <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Masukkan Tempat Lahir"
-                    required autocomplete="tempat lahir"
-                    value="<?= htmlspecialchars($tempatLahir); ?>">
+                <input type="text" id="txtTempatLahir" name="txtTempatLahirEd" 
+                placeholder="Masukkan Tempat Lahir" required
+                value="<?= !empty($tempatLahir) ? $tempatLahir : '' ?>">
             </label>
 
             <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
-                <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="Masukkan Tanggal Lahir"
-                    required autocomplete="tanggal lahir"
-                    value="<?= htmlspecialchars($tanggalLahir); ?>">
+                <input type="date" id="txtTanggalLahir" name="txtTanggalLahirEd" 
+                placeholder="Masukkan Tanggal Lahir" required
+                value="<?= !empty($tanggalLahir) ? $tanggalLahir : '' ?>">
             </label>
 
             <label for="txtHobi"><span>Hobi:</span>
-                <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi"
-                    required autocomplete="hobi"
-                    value="<?= htmlspecialchars($hobi); ?>">
+                <input type="text" id="txtHobi" name="txtHobiEd" 
+                placeholder="Masukkan Hobi" required
+                value="<?= !empty($hobi) ? $hobi : '' ?>">
             </label>
 
             <label for="txtPasangan"><span>Pasangan:</span>
-                <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan"
-                    required autocomplete="pasangan"
-                    value="<?= htmlspecialchars($pasangan); ?>">
+                <input type="text" id="txtPasangan" name="txtPasanganEd" 
+                placeholder="Masukkan Pasangan" required
+                value="<?= !empty($pasangan) ? $pasangan : '' ?>">
             </label>
 
             <label for="txtKerja"><span>Pekerjaan:</span>
-                <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan"
-                    required autocomplete="pekerjaan"
-                    value="<?= htmlspecialchars($pekerjaan); ?>">
+                <input type="text" id="txtKerja" name="txtKerjaEd" 
+                placeholder="Masukkan Pekerjaan" required
+                value="<?= !empty($pekerjaan) ? $pekerjaan : '' ?>">
             </label>
 
             <label for="txtNamaOrangTua"><span>Nama Orang Tua:</span>
-                <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua"
-                    required autocomplete="nama orang tua"
-                    value="<?= htmlspecialchars($namaOrangTua); ?>">
+                <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTuaEd" 
+                placeholder="Masukkan Nama Orang Tua" required
+                value="<?= !empty($namaOrangTua) ? $namaOrangTua : '' ?>">
             </label>
 
             <label for="txtNamaKakak"><span>Nama Kakak:</span>
-                <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan Nama kakak"
-                    required autocomplete="nama kakak"
-                    value="<?= htmlspecialchars($namaKakak); ?>">
+                <input type="text" id="txtNamaKakak" name="txtNamaKakakEd" 
+                placeholder="Masukkan Nama Kakak" required
+                value="<?= !empty($namaKakak) ? $namaKakak : '' ?>">
             </label>
 
             <label for="txtNamaAdik"><span>Nama Adik:</span>
-                <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan Nama Adik"
-                    required autocomplete="nama adik"
-                    value="<?= htmlspecialchars($namaAdik); ?>">
+                <input type="text" id="txtNamaAdik" name="txtNamaAdikEd" 
+                placeholder="Masukkan Nama Adik" required
+                value="<?= !empty($namaAdik) ? $namaAdik : '' ?>">
             </label>
 
           <button type="submit">Kirim</button>
