@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/fungsi.php';
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,81 +32,92 @@ require_once __DIR__ . '/fungsi.php';
     <section id="home">
       <h2>Selamat Datang</h2>
       <?php
-      echo "halo dunia!<br>";
-      echo "nama saya hadi";
+      echo "nama saya Abraar";
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
+
+    <?php
+    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
+    $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
+    $old          = $_SESSION['old'] ?? []; #untuk nilai lama form
+
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); #bersihkan 3 session ini
+    ?>
 
     <section id="biodata">
       <h2>Biodata Sederhana Mahasiswa</h2>
       <form action="proses.php" method="POST">
 
-        <label for="txtNim"><span>NIM:</span>
-          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
+      <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM"
+            required autocomplete="nim"
+            value="<?= isset($old['nim']) ? htmlspecialchars($old['nim']) : '' ?>">
         </label>
-
+      
         <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
+          <input type="text" id="txtNmLengkap" name="txtNmlengkap" placeholder="Masukkan Nama Lengkap"
+            required autocomplete="name"
+            value="<?= isset($old['nama lengkap']) ? htmlspecialchars($old['nama lengkap']) : '' ?>">
         </label>
 
         <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
+          <input type="text" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
+            required autocomplete="tempat lahir"
+            value="<?= isset($old['tempat lahir']) ? htmlspecialchars($old['tempat lahir']) : '' ?>">
         </label>
 
         <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir"
+            required autocomplete="tanggal lahir"
+            value="<?= isset($old['tanggal lahir']) ? htmlspecialchars($old['tanggal lahir']) : '' ?>">
         </label>
 
         <label for="txtHobi"><span>Hobi:</span>
-          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi"
+            required autocomplete="hobi"
+            value="<?= isset($old['hobi']) ? htmlspecialchars($old['hobi']) : '' ?>">
         </label>
 
         <label for="txtPasangan"><span>Pasangan:</span>
-          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan"
+            required autocomplete="pasangan"
+            value="<?= isset($old['pasangan']) ? htmlspecialchars($old['pasangan']) : '' ?>">
         </label>
 
         <label for="txtKerja"><span>Pekerjaan:</span>
-          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan"
+            required autocomplete="pekerjaan"
+            value="<?= isset($old['pekerjaan']) ? htmlspecialchars($old['pekerjaan']) : '' ?>">
         </label>
 
         <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua"
+            required autocomplete="nama orang tua"
+            value="<?= isset($old['nama orang tua']) ? htmlspecialchars($old['nama orang tua']) : '' ?>">
         </label>
 
         <label for="txtNmKakak"><span>Nama Kakak:</span>
-          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama kakak"
+            required autocomplete="nama kakak"
+            value="<?= isset($old['nama kakak']) ? htmlspecialchars($old['nama kakak']) : '' ?>">
         </label>
 
         <label for="txtNmAdik"><span>Nama Adik:</span>
-          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik"
+            required autocomplete="nama adik"
+            value="<?= isset($old['nama adik']) ? htmlspecialchars($old['nama adik']) : '' ?>">
         </label>
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
-    </section>
 
-    <?php
-    $biodata = $_SESSION["biodata"] ?? [];
-
-    $fieldConfig = [
-      "nim" => ["label" => "NIM:", "suffix" => ""],
-      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
-      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
-      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
-      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
-      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
-      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
-      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
-    ];
-    ?>
-
-    <section id="about">
-      <h2>Tentang Saya</h2>
-      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+      <br>
+      <hr>
+      <h2>Yang menghubungi kami</h2>
+      <?php include 'read_biodata.php'; ?>
+    
     </section>
 
     <?php
