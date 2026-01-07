@@ -10,7 +10,7 @@ $fieldConfig = [
       "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
       "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
       "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
-      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "orang tua" => ["label" => "Nama Orang Tua:", "suffix" => ""],
       "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
       "adik" => ["label" => "Nama Adik:", "suffix" => ""],
     ];
@@ -31,7 +31,7 @@ if (!$q) {
         "hobi" => $row['chobi'],
         "pasangan" => $row['cpasangan'],
         "pekerjaan" => $row['cpekerjaan'],
-        "ortu" => $row['cnama_orang_tua'],
+        "orang tua" => $row['cnama_orang_tua'],
         "kakak" => $row['cnama_kakak'],
         "adik" => $row['cnama_adik'],
     ];

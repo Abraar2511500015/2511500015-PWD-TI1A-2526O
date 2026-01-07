@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 #ambil dan bersihkan nilai dari form
 $nim = bersihkan($_POST['txtNim']  ?? '');
-$namaLengkap = bersihkan($_POST['txtNamaLengkap'] ?? '');
-$tempatLahir = bersihkan($_POST['txtTempatLahir'] ?? '');
-$tanggalLahir = bersihkan($_POST['txtTanggalLahir'] ?? '');
+$namalengkap = bersihkan($_POST['txtNamaLengkap'] ?? '');
+$tempatlahir = bersihkan($_POST['txtTempatLahir'] ?? '');
+$tanggallahir = bersihkan($_POST['txtTanggalLahir'] ?? '');
 $hobi = bersihkan($_POST['txtHobi'] ?? '');
 $pasangan = bersihkan($_POST['txtPasangan'] ?? '');
 $pekerjaan = bersihkan($_POST['txtKerja'] ?? '');
@@ -28,15 +28,15 @@ if ($nim === '') {
   $errors[] = 'NIM wajib diisi.';
 }
 
-if ($namaLengkap === '') {
+if ($namalengkap === '') {
   $errors[] = 'Nama Lengkap wajib diisi.';
 }
 
-if($tempatLahir === '') {
+if($tempatlahir === '') {
   $errors[] = 'Tempat Lahir wajib diisi.';
 }
 
-if ($tanggalLahir === '') {
+if ($tanggallahir === '') {
   $errors[] = 'Tanggal Lahir wajib diisi.';
 }
 
@@ -76,15 +76,15 @@ simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
 if (!empty($errors)) {
   $_SESSION['old'] = [
     'nim'  => $nim,
-    'nama lengkap' => $namaLengkap,
-    'tempat lahir' => $tempatLahir,
-    'tanggal lahir' => $tanggalLahir,
+    'nama_lengkap' => $namalengkap,
+    'tempat_lahir' => $tempatlahir,
+    'tanggal_lahir' => $tanggallahir,
     'hobi' => $hobi,
     'pasangan' => $pasangan,
     'pekerjaan' => $pekerjaan,
-    'nama orang tua' => $namaOrangTua,
-    'nama kakak' => $namaKakak,
-    'nama adik' => $namaAdik,
+    'nama_orang_tua' => $namaOrangTua,
+    'nama_kakak' => $namaKakak,
+    'nama_adik' => $namaAdik,
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -110,34 +110,18 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
     'nim'  => $nim,
-    'nama lengkap' => $namaLengkap,
-    'tempat lahir' => $tempatLahir,
-    'tanggal lahir' => $tanggalLahir,
+    'nama_lengkap' => $namalengkap,
+    'tempat_lahir' => $tempatlahir,
+    'tanggal_lahir' => $tanggallahir,
     'hobi' => $hobi,
     'pasangan' => $pasangan,
     'pekerjaan' => $pekerjaan,
-    'nama orang tua' => $namaOrangTua,
-    'nama kakak' => $namaKakak,
-    'nama adik' => $namaAdik,
+    'nama_orang_tua' => $namaOrangTua,
+    'nama_kakak' => $namaKakak,
+    'nama_adik' => $namaAdik,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php#biodata');
 }
 #tutup statement
 mysqli_stmt_close($stmt);
-
-$arrBiodata = [
-  "nim" => $_POST["txtNim"] ?? "",
-  "nama" => $_POST["txtNmLengkap"] ?? "",
-  "tempat" => $_POST["txtT4Lhr"] ?? "",
-  "tanggal" => $_POST["txtTglLhr"] ?? "",
-  "hobi" => $_POST["txtHobi"] ?? "",
-  "pasangan" => $_POST["txtPasangan"] ?? "",
-  "pekerjaan" => $_POST["txtKerja"] ?? "",
-  "ortu" => $_POST["txtNmOrtu"] ?? "",
-  "kakak" => $_POST["txtNmKakak"] ?? "",
-  "adik" => $_POST["txtNmAdik"] ?? ""
-];
-$_SESSION["biodata"] = $arrBiodata;
-
-header("location: index.php#about");

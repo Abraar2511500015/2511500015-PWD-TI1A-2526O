@@ -56,20 +56,20 @@ require_once __DIR__ . '/fungsi.php';
       
         <label for="txtNamaLengkap"><span>Nama Lengkap:</span>
           <input type="text" id="txtNamaLengkap" name="txtNamaLengkap" placeholder="Masukkan Nama Lengkap"
-            required autocomplete="name"
-            value="<?= isset($old['nama lengkap']) ? htmlspecialchars($old['nama lengkap']) : '' ?>">
+            required autocomplete="nama lengkap"
+            value="<?= isset($old['nama_lengkap']) ? htmlspecialchars($old['nama_lengkap']) : '' ?>">
         </label>
 
         <label for="txtTempatLahir"><span>Tempat Lahir:</span>
           <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Masukkan Tempat Lahir"
             required autocomplete="tempat lahir"
-            value="<?= isset($old['tempat lahir']) ? htmlspecialchars($old['tempat lahir']) : '' ?>">
+            value="<?= isset($old['tempat_lahir']) ? htmlspecialchars($old['tempat_lahir']) : '' ?>">
         </label>
 
         <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
           <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="Masukkan Tanggal Lahir"
-            required autocomplete="tanggal lahir"
-            value="<?= isset($old['tanggal lahir']) ? htmlspecialchars($old['tanggal lahir']) : '' ?>">
+            required autocomplete="tanggal_lahir"
+            value="<?= isset($old['tanggal_lahir']) ? htmlspecialchars($old['tanggal_lahir']) : '' ?>">
         </label>
 
         <label for="txtHobi"><span>Hobi:</span>
@@ -92,20 +92,20 @@ require_once __DIR__ . '/fungsi.php';
 
         <label for="txtNamaOrangTua"><span>Nama Orang Tua:</span>
           <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua"
-            required autocomplete="nama orang tua"
-            value="<?= isset($old['nama orang tua']) ? htmlspecialchars($old['nama orang tua']) : '' ?>">
+            required autocomplete="nama_orang_tua"
+            value="<?= isset($old['nama_orang_tua']) ? htmlspecialchars($old['nama_orang_tua']) : '' ?>">
         </label>
 
         <label for="txtNamaKakak"><span>Nama Kakak:</span>
           <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan Nama kakak"
-            required autocomplete="nama kakak"
-            value="<?= isset($old['nama kakak']) ? htmlspecialchars($old['nama kakak']) : '' ?>">
+            required autocomplete="nama_kakak"
+            value="<?= isset($old['nama_kakak']) ? htmlspecialchars($old['nama_kakak']) : '' ?>">
         </label>
 
         <label for="txtNamaAdik"><span>Nama Adik:</span>
           <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan Nama Adik"
-            required autocomplete="nama adik"
-            value="<?= isset($old['nama adik']) ? htmlspecialchars($old['nama adik']) : '' ?>">
+            required autocomplete="nama_adik"
+            value="<?= isset($old['nama_adik']) ? htmlspecialchars($old['nama_adik']) : '' ?>">
         </label>
 
         <button type="submit">Kirim</button>
@@ -115,7 +115,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Biodata Mahasiswa</h2>
-      <?php include 'readbiodata.php'; ?>
+      <?php include 'readbiodata_inc.php'; ?>
     
     </section>
 
@@ -180,7 +180,7 @@ require_once __DIR__ . '/fungsi.php';
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Moh. Sayyid Abraar [2511500015]</p>
   </footer>
 
   <script src="script.js"></script>
