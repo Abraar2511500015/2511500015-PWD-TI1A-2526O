@@ -71,10 +71,16 @@ simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
 */
 if (!empty($errors)) {
   $_SESSION['old'] = [
-    'nama'  => $nama,
-    'email' => $email,
-    'pesan' => $pesan,
-    'captcha' => $captcha,
+        'nim'  => $nim,
+        'nama'  => $nama,
+        'tempat'  => $tempat,
+        'tanggal'  => $tanggal,
+        'hobi'  => $hobi,
+        'pasangan'  => $pasangan,
+        'pekerjaan'  => $pekerjaan,
+        'ortu'  => $ortu,
+        'kakak'  => $kakak,
+        'adik'  => $adik
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -82,7 +88,7 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
+$sql = "INSERT INTO tbl_biodata (cnim, cnama, ctempat, ctanggal, chobi, cpasangan, cpekerjaan, cortu, ckakak, cadik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
@@ -91,7 +97,7 @@ if (!$stmt) {
   redirect_ke('index.php#contact');
 }
 #bind parameter dan eksekusi (s = string)
-mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
+mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $nama, $tempat, $tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik);
 
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);
@@ -99,10 +105,16 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
   redirect_ke('index.php#contact'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
-    'nama'  => $nama,
-    'email' => $email,
-    'pesan' => $pesan,
-    'captcha' => $captcha,
+    'nim'  => $nim,
+    'nama'  => $nama,       
+    'tempat'  => $tempat,
+    'tanggal'  => $tanggal,
+    'hobi'  => $hobi,
+    'pasangan'  => $pasangan,
+    'pekerjaan'  => $pekerjaan,
+    'ortu'  => $ortu,
+    'kakak'  => $kakak,
+    'adik'  => $adik,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php#contact');
@@ -110,18 +122,5 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
 #tutup statement
 mysqli_stmt_close($stmt);
 
-$arrBiodata = [
-  "nim" => $_POST["txtNim"] ?? "",
-  "nama" => $_POST["txtNmLengkap"] ?? "",
-  "tempat" => $_POST["txtT4Lhr"] ?? "",
-  "tanggal" => $_POST["txtTglLhr"] ?? "",
-  "hobi" => $_POST["txtHobi"] ?? "",
-  "pasangan" => $_POST["txtPasangan"] ?? "",
-  "pekerjaan" => $_POST["txtKerja"] ?? "",
-  "ortu" => $_POST["txtNmOrtu"] ?? "",
-  "kakak" => $_POST["txtNmKakak"] ?? "",
-  "adik" => $_POST["txtNmAdik"] ?? ""
-];
-$_SESSION["biodata"] = $arrBiodata;
 
 header("location: index.php#about");
