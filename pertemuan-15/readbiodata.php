@@ -54,11 +54,11 @@
       <td><?= $i++ ?></td>
       <td>
         <a href="editbiodata.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_deletebiodata.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama_lengkap']); ?>?')" href="proses_deletebiodata.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
       </td>
         <td><?= $row['cid']; ?></td>
         <td><?= htmlspecialchars($row['cnim']); ?></td>
-        <td><?= htmlspecialchars($row['cnama']); ?></td>
+        <td><?= htmlspecialchars($row['cnama_lengkap']); ?></td>
         <td><?= htmlspecialchars($row['ctempat_lahir']); ?></td>
         <td><?= htmlspecialchars($row['ctanggal_lahir']); ?></td>
         <td><?= htmlspecialchars($row['chobi']); ?></td>

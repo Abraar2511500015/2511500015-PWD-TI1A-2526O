@@ -21,7 +21,7 @@
 
   #ambil dan bersihkan (sanitasi) nilai dari form
   $nim = bersihkan($_POST['txtNimEd'] ?? '');
-  $nama = bersihkan($_POST['txtNamaLengkapEd'] ?? '');
+  $namalengkap = bersihkan($_POST['txtNamaLengkapEd'] ?? '');
   $tempatlahir = bersihkan($_POST['txtTempatLahirEd'] ?? '');
   $tanggallahir = bersihkan($_POST['txtTanggalLahirEd'] ?? '');
   $hobi = bersihkan($_POST['txtHobiEd'] ?? '');
@@ -37,7 +37,7 @@
         $errors[] = 'NIM wajib diisi.';
     }
 
-    if ($nama === '') {
+    if ($namalengkap === '') {
         $errors[] = 'Nama Lengkap wajib diisi.';
     }
 
@@ -82,7 +82,7 @@
   if (!empty($errors)) {
     $_SESSION['old'] = [
         'nim'  => $nim,
-        'nama_lengkap' => $nama,
+        'nama_lengkap' => $namalengkap,
         'tempat_lahir' => $tempatlahir,
         'tanggal_lahir' => $tanggallahir,
         'hobi' => $hobi,
@@ -112,7 +112,7 @@
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
-  mysqli_stmt_bind_param($stmt, "sssi", $nim, $nama, $tempatlahir, $tanggallahir, $hobi, $pasangan, $pekerjaan, $namaOrangTua, $namaKakak, $namaAdik, $cid);
+  mysqli_stmt_bind_param($stmt, "sssi", $nim, $namalengkap, $tempatlahir, $tanggallahir, $hobi, $pasangan, $pekerjaan, $namaOrangTua, $namaKakak, $namaAdik, $cid);
   if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     unset($_SESSION['old']);
     /*
@@ -123,7 +123,7 @@
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
     $_SESSION['old'] = [
         'nim'  => $nim,
-        'nama_lengkap' => $nama,
+        'nama_lengkap' => $namalengkap,
         'tempat_lahir' => $tempatlahir,
         'tanggal_lahir' => $tanggallahir,
         'hobi' => $hobi,

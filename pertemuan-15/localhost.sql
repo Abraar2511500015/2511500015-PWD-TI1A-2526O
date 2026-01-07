@@ -85,27 +85,14 @@ CREATE TABLE `tbl_biodata` (
   `cpekerjaan` varchar(100) DEFAULT NULL,
   `cnama_orang_tua` varchar(100) DEFAULT NULL,
   `cnama_kakak` varchar(100) DEFAULT NULL,
-  `cnama_adik` varchar(100) DEFAULT NULL
+  `cnama_adik` varchar(100) DEFAULT NULL,
+  `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
---
--- Dumping data for table `tbl_biodata`
---
 
-INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama_lengkap`, `ctempat_lahir`, `ctanggal_lahir`, `chobi`, `cpasangan`, `cpekerjaan`, `cnama_orang_tua`, `cnama_kakak`, `cnama_adik`, `dcreated_at`) VALUES
-
---
--- Indexes for dumped tables
---
 
 ALTER TABLE `tbl_biodata`
   ADD PRIMARY KEY (`cid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
--- AUTO_INCREMENT for table `tbl_biodata`
---  
 
 ALTER TABLE `tbl_biodata`
   MODIFY `cid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;

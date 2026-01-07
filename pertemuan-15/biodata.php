@@ -101,7 +101,7 @@ if (!$stmt) {
   redirect_ke('index.php#biodata');
 }
 #bind parameter dan eksekusi (s = string)
-mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $namaLengkap, $tempatLahir, $tanggalLahir, $hobi, $pasangan, $pekerjaan, $namaOrangTua, $namaKakak, $namaAdik);
+mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $namalengkap, $tempatlahir, $tanggallahir, $hobi, $pasangan, $pekerjaan, $namaOrangTua, $namaKakak, $namaAdik);
 
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);

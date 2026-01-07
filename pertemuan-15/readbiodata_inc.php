@@ -24,7 +24,7 @@ if (!$q) {
   while ($row = mysqli_fetch_assoc($q)) {
     $arrConfig = [
         "nim" => $row['cnim'],
-        "nama_lengkap" => $row['cnama'],
+        "nama_lengkap" => $row['cnama_lengkap'],
         "tempat_lahir" => $row['ctempat_lahir'],
         "tanggal_lahir" => $row['ctanggal_lahir'],
         "hobi" => $row['chobi'],

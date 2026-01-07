@@ -38,7 +38,7 @@
     Ambil data lama dari DB menggunakan prepared statement, 
     jika ada kesalahan, tampilkan penanda error.
   */
-  $stmt = mysqli_prepare($conn, "SELECT cid, cnim, cnama, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik
+  $stmt = mysqli_prepare($conn, "SELECT cid, cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik
                                     FROM tbl_biodata WHERE cid = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error'] = 'Query tidak benar.';
@@ -58,7 +58,7 @@
 
   #Nilai awal (prefill form)
     $nim = $row['cnim'] ?? '';
-    $nama = $row['cnama'] ?? '';
+    $namalengkap = $row['cnama_lengkap'] ?? '';
     $tempatlahir = $row['ctempat_lahir'] ?? '';
     $tanggallahir = $row['ctanggal_lahir'] ?? '';
     $hobi = $row['chobi'] ?? '';
@@ -74,15 +74,15 @@
   unset($_SESSION['flash_error'], $_SESSION['old']);
   if (!empty($old)) {
     $nim = $old['nim'] ?? $nim;
-    $nama = $old['nama lengkap'] ?? $nama;
-    $tempatlahir = $old['tempat lahir'] ?? $tempatlahir;
-    $tanggallahir = $old['tanggal lahir'] ?? $tanggallahir;
+    $namalengkap = $old['nama_lengkap'] ?? $nama;
+    $tempatlahir = $old['tempat_lahir'] ?? $tempatlahir;
+    $tanggallahir = $old['tanggal_lahir'] ?? $tanggallahir;
     $hobi = $old['hobi'] ?? $hobi;
     $pasangan = $old['pasangan'] ?? $pasangan;
     $pekerjaan = $old['pekerjaan'] ?? $pekerjaan;
-    $namaOrangTua = $old['nama orang tua'] ?? $namaOrangTua;
-    $namaKakak = $old['nama kakak'] ?? $namaKakak;
-    $namaAdik = $old['nama adik'] ?? $namaAdik;
+    $namaOrangTua = $old['nama_orang_tua'] ?? $namaOrangTua;
+    $namaKakak = $old['nama_kakak'] ?? $namaKakak;
+    $namaAdik = $old['nama_adik'] ?? $namaAdik;
   }
 ?>
 
@@ -131,13 +131,13 @@
             <label for="txtNamaLengkap"><span>Nama Lengkap:</span>
                 <input type="text" id="txtNamaLengkap" name="txtNamaLengkapEd" 
                 placeholder="Masukkan Nama Lengkap" required autocomplete="name"
-                value="<?= !empty($nama) ? $nama : '' ?>">
+                value="<?= !empty($namalengkap) ? $namalengkap : '' ?>">
             </label>
 
             <label for="txtTempatLahir"><span>Tempat Lahir:</span>
                 <input type="text" id="txtTempatLahir" name="txtTempatLahirEd" 
                 placeholder="Masukkan Tempat Lahir" required
-                value="<?= !empty($tempatLahir) ? $tempatLahir : '' ?>">
+                value="<?= !empty($tempatlahir) ? $tempatlahir : '' ?>">
             </label>
 
             <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
