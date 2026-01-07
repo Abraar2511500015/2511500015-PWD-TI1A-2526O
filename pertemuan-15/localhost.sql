@@ -76,14 +76,15 @@ CREATE TABLE `tbl_biodata` (
   `cid` int NOT NULL,
   `cnim` varchar(20) DEFAULT NULL,
   `cnama` varchar(100) DEFAULT NULL,
-  `ctempat` varchar(100) DEFAULT NULL,
-  `ctanggal` date DEFAULT NULL,
-  `chobi` varchar(100) DEFAULT NULL,
+  `ctempat_lahir` varchar(100) DEFAULT NULL,
+  `ctanggal_lahir` date DEFAULT NULL,
+  `chobi` varchar(255) DEFAULT NULL,
   `cpasangan` varchar(100) DEFAULT NULL,
   `cpekerjaan` varchar(100) DEFAULT NULL,
-  `cortu` varchar(100) DEFAULT NULL,
-  `ckakak` varchar(100) DEFAULT NULL,
-  `cadik` varchar(100) DEFAULT NULL
+  `cnama_orang_tua` varchar(100) DEFAULT NULL,
+  `cnama_kakak` varchar(100) DEFAULT NULL,
+  `cnama_adik` varchar(100) DEFAULT NULL,
+  `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 
