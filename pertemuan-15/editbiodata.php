@@ -57,10 +57,10 @@
   }
 
   #Nilai awal (prefill form)
-  $nim = $row['cnim'] ?? '';
-  $nama = $row['cnama'] ?? '';
-  $tempatLahir = $row['ctempat_lahir'] ?? '';
-    $tanggalLahir = $row['ctanggal_lahir'] ?? '';
+    $nim = $row['cnim'] ?? '';
+    $nama = $row['cnama'] ?? '';
+    $tempatlahir = $row['ctempat_lahir'] ?? '';
+    $tanggallahir = $row['ctanggal_lahir'] ?? '';
     $hobi = $row['chobi'] ?? '';
     $pasangan = $row['cpasangan'] ?? '';
     $pekerjaan = $row['cpekerjaan'] ?? '';
@@ -75,8 +75,8 @@
   if (!empty($old)) {
     $nim = $old['nim'] ?? $nim;
     $nama = $old['nama lengkap'] ?? $nama;
-    $tempatLahir = $old['tempat lahir'] ?? $tempatLahir;
-    $tanggalLahir = $old['tanggal lahir'] ?? $tanggalLahir;
+    $tempatlahir = $old['tempat lahir'] ?? $tempatlahir;
+    $tanggallahir = $old['tanggal lahir'] ?? $tanggallahir;
     $hobi = $old['hobi'] ?? $hobi;
     $pasangan = $old['pasangan'] ?? $pasangan;
     $pekerjaan = $old['pekerjaan'] ?? $pekerjaan;

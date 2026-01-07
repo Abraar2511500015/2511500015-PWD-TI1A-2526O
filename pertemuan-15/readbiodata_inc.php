@@ -4,14 +4,14 @@ require 'koneksi.php';
 $fieldConfig = [
       "nim" => ["label" => "NIM:", "suffix" => ""],
       "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
-      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+      "tempat_lahir" => ["label" => "Tempat Lahir:", "suffix" => ""],
+      "tanggal_lahir" => ["label" => "Tanggal Lahir:", "suffix" => ""],
       "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
       "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
       "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
-      "orang tua" => ["label" => "Nama Orang Tua:", "suffix" => ""],
-      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+      "nama_orang_tua" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "nama_kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+      "nama_adik" => ["label" => "Nama Adik:", "suffix" => ""],
     ];
 
 $sql = "SELECT * FROM tbl_biodata ORDER BY cid DESC";
@@ -25,14 +25,14 @@ if (!$q) {
     $arrConfig = [
         "nim" => $row['cnim'],
         "nama" => $row['cnama'],
-        "tempat" => $row['ctempat_lahir'],
-        "tanggal" => $row['ctanggal_lahir'],
+        "tempat_lahir" => $row['ctempat_lahir'],
+        "tanggal_lahir" => $row['ctanggal_lahir'],
         "hobi" => $row['chobi'],
         "pasangan" => $row['cpasangan'],
         "pekerjaan" => $row['cpekerjaan'],
-        "orang tua" => $row['cnama_orang_tua'],
-        "kakak" => $row['cnama_kakak'],
-        "adik" => $row['cnama_adik'],
+        "nama_orang_tua" => $row['cnama_orang_tua'],
+        "nama_kakak" => $row['cnama_kakak'],
+        "nama_adik" => $row['cnama_adik'],
     ];
     echo tampilkanBiodata($fieldConfig, $arrConfig);
   }
