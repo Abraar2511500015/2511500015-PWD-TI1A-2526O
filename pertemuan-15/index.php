@@ -115,7 +115,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Biodata Mahasiswa</h2>
-      <?php include 'readbiodata.php'; ?>
+      <?php include 'readbiodata_inc.php'; ?>
     
     </section>
 

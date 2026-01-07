@@ -70,30 +70,42 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-
+--
+-- Table structure for table `tbl_biodata`
+--
 
 CREATE TABLE `tbl_biodata` (
   `cid` int NOT NULL,
   `cnim` varchar(20) DEFAULT NULL,
-  `cnama` varchar(100) DEFAULT NULL,
+  `cnama_lengkap` varchar(100) DEFAULT NULL,
   `ctempat_lahir` varchar(100) DEFAULT NULL,
   `ctanggal_lahir` date DEFAULT NULL,
-  `chobi` varchar(255) DEFAULT NULL,
+  `chobi` varchar(100) DEFAULT NULL,
   `cpasangan` varchar(100) DEFAULT NULL,
   `cpekerjaan` varchar(100) DEFAULT NULL,
   `cnama_orang_tua` varchar(100) DEFAULT NULL,
   `cnama_kakak` varchar(100) DEFAULT NULL,
-  `cnama_adik` varchar(100) DEFAULT NULL,
-  `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `cnama_adik` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
+--
+-- Dumping data for table `tbl_biodata`
+--
 
-INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama`, `ctempat_lahir`, `ctanggal_lahir`, `chobi`, `cpasangan`, `cpekerjaan`, `cnama_orang_tua`, `cnama_kakak`, `cnama_adik`, `dcreated_at`) VALUES
+INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama_lengkap`, `ctempat_lahir`, `ctanggal_lahir`, `chobi`, `cpasangan`, `cpekerjaan`, `cnama_orang_tua`, `cnama_kakak`, `cnama_adik`, `dcreated_at`) VALUES
 
+--
+-- Indexes for dumped tables
+--
 
 ALTER TABLE `tbl_biodata`
   ADD PRIMARY KEY (`cid`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+-- AUTO_INCREMENT for table `tbl_biodata`
+--  
 
 ALTER TABLE `tbl_biodata`
   MODIFY `cid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
