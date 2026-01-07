@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require __DIR__ . './koneksi.php';
+  require __DIR__ . '/koneksi.php';
   require_once __DIR__ . '/fungsi.php';
 
   #validasi cid wajib angka dan > 0
@@ -34,7 +34,6 @@
       Redirect balik ke read.php dan tampilkan info sukses.
     */
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah dihapus.';
-    redirect_ke('read.php'); #pola PRG: kembali ke data dan exit()
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
     $_SESSION['flash_error'] = 'Data gagal dihapus. Silakan coba lagi.';
   }
