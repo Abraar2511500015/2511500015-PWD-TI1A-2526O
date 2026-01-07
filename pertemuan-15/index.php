@@ -55,13 +55,13 @@ require_once __DIR__ . '/fungsi.php';
         </label>
 
         <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="date" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
+          <input type="text" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
             required autocomplete="tempat lahir"
             value="<?= isset($old['tempat lahir']) ? htmlspecialchars($old['tempat lahir']) : '' ?>">
         </label>
 
         <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir"
+          <input type="date" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir"
             required autocomplete="tanggal lahir"
             value="<?= isset($old['tanggal lahir']) ? htmlspecialchars($old['tanggal lahir']) : '' ?>">
         </label>
