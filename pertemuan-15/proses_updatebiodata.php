@@ -6,7 +6,7 @@
   #cek method form, hanya izinkan POST
   if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
-    redirect_ke('read_biodata.php');
+    redirect_ke('readbiodata_inc.php');
   }
 
   #validasi cid wajib angka dan > 0
@@ -16,7 +16,7 @@
 
   if (!$cid) {
     $_SESSION['flash_error'] = 'CID Tidak Valid.';
-    redirect_ke('edit.php?cid='. (int)$cid);
+    redirect_ke('editbiodata.php?cid='. (int)$cid);
   }
 
   #ambil dan bersihkan (sanitasi) nilai dari form
@@ -118,7 +118,7 @@
       Redirect balik ke read.php dan tampilkan info sukses.
     */
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
-    redirect_ke('read_biodata.php'); #pola PRG: kembali ke data dan exit()
+    redirect_ke('readbiodata_inc.php'); #pola PRG: kembali ke data dan exit()
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
     $_SESSION['old'] = [
         'nim'  => $nim,
