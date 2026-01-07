@@ -48,20 +48,20 @@ require_once __DIR__ . '/fungsi.php';
             value="<?= isset($old['nim']) ? htmlspecialchars($old['nim']) : '' ?>">
         </label>
       
-        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-          <input type="text" id="txtNmLengkap" name="txtNmlengkap" placeholder="Masukkan Nama Lengkap"
+        <label for="txtNamaLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNamaLengkap" name="txtNamaLengkap" placeholder="Masukkan Nama Lengkap"
             required autocomplete="name"
             value="<?= isset($old['nama lengkap']) ? htmlspecialchars($old['nama lengkap']) : '' ?>">
         </label>
 
-        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="text" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
+        <label for="txtTempatLahir"><span>Tempat Lahir:</span>
+          <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Masukkan Tempat Lahir"
             required autocomplete="tempat lahir"
             value="<?= isset($old['tempat lahir']) ? htmlspecialchars($old['tempat lahir']) : '' ?>">
         </label>
 
-        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="date" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir"
+        <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
+          <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="Masukkan Tanggal Lahir"
             required autocomplete="tanggal lahir"
             value="<?= isset($old['tanggal lahir']) ? htmlspecialchars($old['tanggal lahir']) : '' ?>">
         </label>
@@ -84,20 +84,20 @@ require_once __DIR__ . '/fungsi.php';
             value="<?= isset($old['pekerjaan']) ? htmlspecialchars($old['pekerjaan']) : '' ?>">
         </label>
 
-        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua"
+        <label for="txtNamaOrangTua"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua"
             required autocomplete="nama orang tua"
             value="<?= isset($old['nama orang tua']) ? htmlspecialchars($old['nama orang tua']) : '' ?>">
         </label>
 
-        <label for="txtNmKakak"><span>Nama Kakak:</span>
-          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama kakak"
+        <label for="txtNamaKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan Nama kakak"
             required autocomplete="nama kakak"
             value="<?= isset($old['nama kakak']) ? htmlspecialchars($old['nama kakak']) : '' ?>">
         </label>
 
-        <label for="txtNmAdik"><span>Nama Adik:</span>
-          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik"
+        <label for="txtNamaAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan Nama Adik"
             required autocomplete="nama adik"
             value="<?= isset($old['nama adik']) ? htmlspecialchars($old['nama adik']) : '' ?>">
         </label>
