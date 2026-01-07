@@ -1,0 +1,194 @@
+<?php
+  session_start();
+  require 'koneksi.php';
+  require 'fungsi.php';
+
+  /*
+    Ambil nilai cid dari GET dan lakukan validasi untuk 
+    mengecek cid harus angka dan lebih besar dari 0 (> 0).
+    'options' => ['min_range' => 1] artinya cid harus ≥ 1 
+    (bukan 0, bahkan bukan negatif, bukan huruf, bukan HTML).
+  */
+  $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT, [
+    'options' => ['min_range' => 1]
+  ]);
+  /*
+    Skrip di atas cara penulisan lamanya adalah:
+    $cid = $_GET['cid'] ?? '';
+    $cid = (int)$cid;
+
+    Cara lama seperti di atas akan mengambil data mentah 
+    kemudian validasi dilakukan secara terpisah, sehingga 
+    rawan lupa validasi. Untuk input dari GET atau POST, 
+    filter_input() lebih disarankan daripada $_GET atau $_POST.
+  */
+
+  /*
+    Cek apakah $cid bernilai valid:
+    Kalau $cid tidak valid, maka jangan lanjutkan proses, 
+    kembalikan pengguna ke halaman awal (read.php) sembari 
+    mengirim penanda error.
+  */
+  if (!$cid) {
+    $_SESSION['flash_error'] = 'Akses tidak valid.';
+    redirect_ke('readbiodata.php');
+  }
+
+  /*
+    Ambil data lama dari DB menggunakan prepared statement, 
+    jika ada kesalahan, tampilkan penanda error.
+  */
+  $stmt = mysqli_prepare($conn, "SELECT cid, cnim, cnama, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik
+                                    FROM tbl_biodata WHERE cid = ? LIMIT 1");
+  if (!$stmt) {
+    $_SESSION['flash_error'] = 'Query tidak benar.';
+    redirect_ke('readbiodata.php');
+  }
+
+  mysqli_stmt_bind_param($stmt, "i", $cid);
+  mysqli_stmt_execute($stmt);
+  $res = mysqli_stmt_get_result($stmt);
+  $row = mysqli_fetch_assoc($res);
+  mysqli_stmt_close($stmt);
+
+  if (!$row) {
+    $_SESSION['flash_error'] = 'Record tidak ditemukan.';
+    redirect_ke('readbiodata.php');
+  }
+
+  #Nilai awal (prefill form)
+  $nim = $row['cnim'] ?? '';
+  $nama = $row['cnama'] ?? '';
+  $tempatLahir = $row['ctempat_lahir'] ?? '';
+    $tanggalLahir = $row['ctanggal_lahir'] ?? '';
+    $hobi = $row['chobi'] ?? '';
+    $pasangan = $row['cpasangan'] ?? '';
+    $pekerjaan = $row['cpekerjaan'] ?? '';
+    $namaOrangTua = $row['cnama_orang_tua'] ?? '';
+    $namaKakak = $row['cnama_kakak'] ?? '';
+    $namaAdik = $row['cnama_adik'] ?? '';
+
+  #Ambil error dan nilai old input kalau ada
+  $flash_error = $_SESSION['flash_error'] ?? '';
+  $old = $_SESSION['old'] ?? [];
+  unset($_SESSION['flash_error'], $_SESSION['old']);
+  if (!empty($old)) {
+    $nim = $old['nim'] ?? $nim;
+    $nama = $old['nama lengkap'] ?? $nama;
+    $tempatLahir = $old['tempat lahir'] ?? $tempatLahir;
+    $tanggalLahir = $old['tanggal lahir'] ?? $tanggalLahir;
+    $hobi = $old['hobi'] ?? $hobi;
+    $pasangan = $old['pasangan'] ?? $pasangan;
+    $pekerjaan = $old['pekerjaan'] ?? $pekerjaan;
+    $namaOrangTua = $old['nama orang tua'] ?? $namaOrangTua;
+    $namaKakak = $old['nama kakak'] ?? $namaKakak;
+    $namaAdik = $old['nama adik'] ?? $namaAdik;
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul Halaman</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Ini Header</h1>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+        &#9776;
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="biodata">
+        <h2>Edit Buku Tamu</h2>
+        <?php if (!empty($flash_error)): ?>
+          <div style="padding:10px; margin-bottom:10px; 
+            background:#f8d7da; color:#721c24; border-radius:6px;">
+            <?= $flash_error; ?>
+          </div>
+        <?php endif; ?>
+        <form action="proses_updatebiodata.php" method="POST">
+
+          <input type="text" name="cid" value="<?= (int)$cid; ?>">
+
+          <label for="txtNim"><span>NIM:</span>
+            <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM"
+              required autocomplete="nim"
+              value="<?= htmlspecialchars($nim); ?>">
+            </label>
+
+            <label for="txtNamaLengkap"><span>Nama Lengkap:</span>
+                <input type="text" id="txtNamaLengkap" name="txtNamaLengkap" placeholder="Masukkan Nama Lengkap"
+                    required autocomplete="name"
+                    value="<?= htmlspecialchars($nama); ?>">
+            </label>
+
+            <label for="txtTempatLahir"><span>Tempat Lahir:</span>
+                <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Masukkan Tempat Lahir"
+                    required autocomplete="tempat lahir"
+                    value="<?= htmlspecialchars($tempatLahir); ?>">
+            </label>
+
+            <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
+                <input type="date" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="Masukkan Tanggal Lahir"
+                    required autocomplete="tanggal lahir"
+                    value="<?= htmlspecialchars($tanggalLahir); ?>">
+            </label>
+
+            <label for="txtHobi"><span>Hobi:</span>
+                <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi"
+                    required autocomplete="hobi"
+                    value="<?= htmlspecialchars($hobi); ?>">
+            </label>
+
+            <label for="txtPasangan"><span>Pasangan:</span>
+                <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan"
+                    required autocomplete="pasangan"
+                    value="<?= htmlspecialchars($pasangan); ?>">
+            </label>
+
+            <label for="txtKerja"><span>Pekerjaan:</span>
+                <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan"
+                    required autocomplete="pekerjaan"
+                    value="<?= htmlspecialchars($pekerjaan); ?>">
+            </label>
+
+            <label for="txtNamaOrangTua"><span>Nama Orang Tua:</span>
+                <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua"
+                    required autocomplete="nama orang tua"
+                    value="<?= htmlspecialchars($namaOrangTua); ?>">
+            </label>
+
+            <label for="txtNamaKakak"><span>Nama Kakak:</span>
+                <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan Nama kakak"
+                    required autocomplete="nama kakak"
+                    value="<?= htmlspecialchars($namaKakak); ?>">
+            </label>
+
+            <label for="txtNamaAdik"><span>Nama Adik:</span>
+                <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan Nama Adik"
+                    required autocomplete="nama adik"
+                    value="<?= htmlspecialchars($namaAdik); ?>">
+            </label>
+
+          <button type="submit">Kirim</button>
+          <button type="reset">Batal</button>
+          <a href="readbiodata.php" class="reset">Kembali</a>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
