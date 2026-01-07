@@ -34,7 +34,6 @@ require_once __DIR__ . '/fungsi.php';
       <?php
       echo "nama saya Abraar";
       ?>
-      <p>Ini contoh paragraf HTML.</p>
     </section>
 
     <?php
