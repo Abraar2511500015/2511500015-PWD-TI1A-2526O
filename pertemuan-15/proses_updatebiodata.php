@@ -57,6 +57,14 @@
   if ($pasangan === '') {
     $errors[] = 'Pasangan wajib diisi.';
   }
+
+  if ($pekerjaan === '') {
+    $errors[] = 'Pekerjaan wajib diisi.';
+  }
+
+  if ($ortu === '') {
+    $errors[] = 'Nama orang tua wajib diisi.';
+  }
   /*
   kondisi di bawah ini hanya dikerjakan jika ada error, 
   simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
