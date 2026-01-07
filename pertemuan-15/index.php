@@ -116,7 +116,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Yang menghubungi kami</h2>
-      <?php include 'read_biodata.php'; ?>
+      <?php include 'readbiodata_inc.php'; ?>
     
     </section>
 
