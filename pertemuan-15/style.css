@@ -113,7 +113,8 @@ header li a:active {
 
 #contact input,
 #contact textarea,
-#biodata input {
+#biodata input,
+#biodata textarea {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -248,6 +249,7 @@ footer {
   #contact input,
   #biodata input,
   #contact textarea,
+  #biodata textarea,
   #contact button,
   #biodata button {
     width: 100%;

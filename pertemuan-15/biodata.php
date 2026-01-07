@@ -92,7 +92,7 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_biodata (cnim, cnama, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO tbl_biodata (cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
@@ -106,7 +106,7 @@ mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $namalengkap, $tempatlahir, $t
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
-  redirect_ke('index.php#contact'); #pola PRG: kembali ke form / halaman home
+  redirect_ke('index.php#biodata'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
     'nim'  => $nim,
