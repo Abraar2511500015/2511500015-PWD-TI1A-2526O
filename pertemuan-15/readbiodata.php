@@ -56,8 +56,8 @@
         <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
         <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
       </td>
-      <td><?= $row['cid']; ?></td>
-      <td><?= htmlspecialchars($row['cnim']); ?></td>
+        <td><?= $row['cid']; ?></td>
+        <td><?= htmlspecialchars($row['cnim']); ?></td>
         <td><?= htmlspecialchars($row['cnama']); ?></td>
         <td><?= htmlspecialchars($row['ctempat_lahir']); ?></td>
         <td><?= htmlspecialchars($row['ctanggal_lahir']); ?></td>
@@ -67,7 +67,7 @@
         <td><?= htmlspecialchars($row['cnama_orang_tua']); ?></td>
         <td><?= htmlspecialchars($row['cnama_kakak']); ?></td>
         <td><?= htmlspecialchars($row['cnama_adik']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
+        <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
     </tr>
   <?php endwhile; ?>
 </table>
