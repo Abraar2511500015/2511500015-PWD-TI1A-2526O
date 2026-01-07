@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__ . './koneksi.php';
+require __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
 #cek method form, hanya izinkan POST
@@ -65,7 +65,7 @@ if ($namaAdik === '') {
 }
 
 
-if (mb_strlen($namaLengkap) < 3) {
+if (mb_strlen($namalengkap) < 3) {
   $errors[] = 'Nama Lengkap minimal 3 karakter.';
 }
 
@@ -125,3 +125,5 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
 }
 #tutup statement
 mysqli_stmt_close($stmt);
+
+header("location: index.php#about");

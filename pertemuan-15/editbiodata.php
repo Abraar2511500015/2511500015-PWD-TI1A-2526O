@@ -143,7 +143,7 @@
             <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
                 <input type="date" id="txtTanggalLahir" name="txtTanggalLahirEd" 
                 placeholder="Masukkan Tanggal Lahir" required
-                value="<?= !empty($tanggalLahir) ? $tanggalLahir : '' ?>">
+                value="<?= !empty($tanggallahir) ? $tanggallahir : '' ?>">
             </label>
 
             <label for="txtHobi"><span>Hobi:</span>
