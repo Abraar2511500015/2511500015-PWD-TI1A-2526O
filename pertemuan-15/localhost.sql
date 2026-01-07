@@ -69,3 +69,31 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+CREATE TABLE `tbl_biodata` (
+  `cid` int NOT NULL,
+  `cnim` varchar(20) DEFAULT NULL,
+  `cnama` varchar(100) DEFAULT NULL,
+  `ctempat` varchar(100) DEFAULT NULL,
+  `ctanggal` date DEFAULT NULL,
+  `chobi` varchar(100) DEFAULT NULL,
+  `cpasangan` varchar(100) DEFAULT NULL,
+  `cpekerjaan` varchar(100) DEFAULT NULL,
+  `cortu` varchar(100) DEFAULT NULL,
+  `ckakak` varchar(100) DEFAULT NULL,
+  `cadik` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama`, `ctempat`, `ctanggal`, `chobi`, `cpasangan`, `cpekerjaan`, `cortu`, `ckakak`, `cadik`, `dcreated_at`) VALUES
+
+
+ALTER TABLE `tbl_biodata`
+  ADD PRIMARY KEY (`cid`);
+
+
+ALTER TABLE `tbl_biodata`
+  MODIFY `cid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+COMMIT;
