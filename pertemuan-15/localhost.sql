@@ -87,7 +87,7 @@ CREATE TABLE `tbl_biodata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 
-INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama`, `ctempat`, `ctanggal`, `chobi`, `cpasangan`, `cpekerjaan`, `cortu`, `ckakak`, `cadik`, `dcreated_at`) VALUES
+INSERT INTO `tbl_biodata` (`cid`, `cnim`, `cnama`, `ctempat_lahir`, `ctanggal_lahir`, `chobi`, `cpasangan`, `cpekerjaan`, `cnama_orang_tua`, `cnama_kakak`, `cnama_adik`, `dcreated_at`) VALUES
 
 
 ALTER TABLE `tbl_biodata`
