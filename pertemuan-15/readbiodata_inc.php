@@ -3,7 +3,7 @@ require 'koneksi.php';
 
 $fieldConfig = [
       "nim" => ["label" => "NIM:", "suffix" => ""],
-      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+      "nama_lengkap" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
       "tempat_lahir" => ["label" => "Tempat Lahir:", "suffix" => ""],
       "tanggal_lahir" => ["label" => "Tanggal Lahir:", "suffix" => ""],
       "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
@@ -24,7 +24,7 @@ if (!$q) {
   while ($row = mysqli_fetch_assoc($q)) {
     $arrConfig = [
         "nim" => $row['cnim'],
-        "nama" => $row['cnama'],
+        "nama_lengkap" => $row['cnama'],
         "tempat_lahir" => $row['ctempat_lahir'],
         "tanggal_lahir" => $row['ctanggal_lahir'],
         "hobi" => $row['chobi'],
