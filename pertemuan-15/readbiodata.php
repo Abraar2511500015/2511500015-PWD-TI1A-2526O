@@ -33,8 +33,6 @@
 
 <table border="1" cellpadding="8" cellspacing="0">
   <tr>
-    <th>No.</th>
-    <th>Aksi</th>
     <th>ID</th>
     <th>Nama</th>
     <th>Tempat Lahir</th>
@@ -53,7 +51,7 @@
       <td><?= $i++ ?></td>
       <td>
         <a href="editbiodata.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_deletebiodata.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
       </td>
       <td><?= $row['cid']; ?></td>
       <td><?= htmlspecialchars($row['cnim']); ?></td>
