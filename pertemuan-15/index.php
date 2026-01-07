@@ -37,17 +37,10 @@ require_once __DIR__ . '/fungsi.php';
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <?php
-    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
-    $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
-    $old          = $_SESSION['old'] ?? []; #untuk nilai lama form
-
-    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); #bersihkan 3 session ini
-    ?>
 
     <section id="biodata">
       <h2>Biodata Sederhana Mahasiswa</h2>
-      <form action="proses.php" method="POST">
+      <form action="prosesbiodata.php" method="POST">
 
       <label for="txtNim"><span>NIM:</span>
           <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM"
@@ -62,7 +55,7 @@ require_once __DIR__ . '/fungsi.php';
         </label>
 
         <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="text" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
+          <input type="date" id="txtT4Lahir" name="txtT4Lahir" placeholder="Masukkan Tempat Lahir"
             required autocomplete="tempat lahir"
             value="<?= isset($old['tempat lahir']) ? htmlspecialchars($old['tempat lahir']) : '' ?>">
         </label>
@@ -169,7 +162,7 @@ require_once __DIR__ . '/fungsi.php';
             value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
         </label>
 
-        <button type=" submit">Kirim</button>
+        <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
       </form>
 
