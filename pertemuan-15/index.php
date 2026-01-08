@@ -32,7 +32,7 @@ require_once __DIR__ . '/fungsi.php';
     <section id="home">
       <h2>Selamat Datang</h2>
       <?php
-      echo "nama saya Abraar";
+      echo "My Name Is Abraar";
       ?>
     </section>
 
