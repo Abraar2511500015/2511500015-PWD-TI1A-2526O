@@ -76,10 +76,10 @@ simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
 */
 if (!empty($errors)) {
   $_SESSION['old'] = [
-    'kodedos'  => $KodeDosen,
-    'nama' => $NamaDosen,
+    'kodedosen'  => $KodeDosen,
+    'namadosen' => $NamaDosen,
     'alamat' => $Alamat,
-    'tanggal' => $TanggalJadiDosen,
+    'tanggaljadidosen' => $TanggalJadiDosen,
     'jja' => $JJA,
     'namapasangan' => $NamaPasangan,
     'nomorhp' => $NomorHp,
