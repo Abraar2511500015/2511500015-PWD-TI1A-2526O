@@ -126,5 +126,5 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
 #tutup statement
 mysqli_stmt_close($stmt);
 
-header("location: index.php#about");
+header("location: index.php#home");
 
