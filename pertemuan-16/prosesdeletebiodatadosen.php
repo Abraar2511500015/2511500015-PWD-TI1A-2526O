@@ -10,7 +10,7 @@
 
   if (!$cid) {
     $_SESSION['flash_error'] = 'CID Tidak Valid.';
-    redirect_ke('read.php');
+    redirect_ke('readbiodatadosen.php');
   }
 
   /*
@@ -23,7 +23,7 @@
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('read.php');
+    redirect_ke('readbiodata.php');
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
@@ -40,4 +40,4 @@
   #tutup statement
   mysqli_stmt_close($stmt);
 
-  redirect_ke('read.php');
+  redirect_ke('readbiodatadosen.php');
