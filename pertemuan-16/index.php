@@ -37,7 +37,13 @@ require_once __DIR__ . '/fungsi.php';
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
+    <?php
+    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
+    $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
+    $old          = $_SESSION['old'] ?? []; #untuk nilai lama form
 
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); #bersihkan 3 session ini
+    ?>
     <section id="biodata">
       <h2>Biodata Dosen</h2>
       <form action="proses_bio.php" method="POST">
