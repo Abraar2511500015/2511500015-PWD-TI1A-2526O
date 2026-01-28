@@ -1,29 +1,3 @@
-<?php
-session_start();
-require __DIR__ . './koneksi.php';
-require_once __DIR__ . '/fungsi.php';
-
-/*
-	ikuti cara penulisan proses.php untuk validasi, sanitasi, RPG, data old
-	dan insert ke tbl_tamu termasuk flash message ke index.php#biodata
-	bedanya, kali ini diterapkan untuk biodata dosen bukan tamu
-*/
-
-$arrBiodata = [
-  "kodedos" => $_POST["txtKodeDos"] ?? "",
-  "nama" => $_POST["txtNmDosen"] ?? "",
-  "alamat" => $_POST["txtAlRmh"] ?? "",
-  "tanggal" => $_POST["txtTglDosen"] ?? "",
-  "jja" => $_POST["txtJJA"] ?? "",
-  "prodi" => $_POST["txtProdi"] ?? "",
-  "nohp" => $_POST["txtNoHP"] ?? "",
-  "pasangan" => $_POST["txNamaPasangan"] ?? "",
-  "anak" => $_POST["txtNmAnak"] ?? "",
-  "ilmu" => $_POST["txtBidangIlmu"] ?? ""
-];
-$_SESSION["biodata"] = $arrBiodata;
-
-header("location: index.php#about");
 
 <?php
 session_start();
@@ -51,49 +25,49 @@ $BidangIlmuDosen = bersihkan($_POST['txtBidangIlmu'] ?? '');
 #Validasi sederhana
 $errors = []; #ini array untuk menampung semua error yang ada
 
-if ($nim === '') {
-  $errors[] = 'NIM wajib diisi.';
+if ($KodeDosen === '') {
+  $errors[] = 'Kode Dosen wajib diisi.';
 }
 
-if ($namalengkap === '') {
-  $errors[] = 'Nama Lengkap wajib diisi.';
+if ($NamaDosen === '') {
+  $errors[] = 'Nama Dosen wajib diisi.';
 }
 
-if($tempatlahir === '') {
-  $errors[] = 'Tempat Lahir wajib diisi.';
+if($Alamat === '') {
+  $errors[] = 'Alamat Rumah wajib diisi.';
 }
 
-if ($tanggallahir === '') {
-  $errors[] = 'Tanggal Lahir wajib diisi.';
+if ($TanggalJadiDosen === '') {
+  $errors[] = 'Tanggal Jadi Dosen wajib diisi.';
 }
 
-if ($hobi === '') {
-  $errors[] = 'Hobi wajib diisi.';
+if ($JJA === '') {
+  $errors[] = 'JJA Dosen wajib diisi.';
 }
 
-if ($pasangan === '') {
-  $errors[] = 'Pasangan wajib diisi.';
+if ($NamaPasangan === '') {
+  $errors[] = 'Nama Pasangan wajib diisi.';
 }
 
-if ($pekerjaan === '') {
-  $errors[] = 'Pekerjaan wajib diisi.';
+if ($NomorHp === '') {
+  $errors[] = 'Nomor HP wajib diisi.';
 }
 
-if ($namaOrangTua === '') {
-  $errors[] = 'Nama Orang Tua wajib diisi.';
+if ($HomebaseProdi === '') {
+  $errors[] = 'Homebase Prodi wajib diisi.';
 }
 
-if ($namaKakak === '') {
-  $errors[] = 'Nama Kakak wajib diisi.';
+if ($NamaAnak === '') {
+  $errors[] = 'Nama Anak wajib diisi.';
 }
 
-if ($namaAdik === '') {
-  $errors[] = 'Nama Adik wajib diisi.';
+if ($BidangIlmuDosen === '') {
+  $errors[] = 'Bidang Ilmu Dosen wajib diisi.';
 }
 
 
-if (mb_strlen($namalengkap) < 3) {
-  $errors[] = 'Nama Lengkap minimal 3 karakter.';
+if (mb_strlen($NamaDosen) < 3) {
+  $errors[] = 'Nama Dosen minimal 3 karakter.';
 }
 
 /*
@@ -102,16 +76,16 @@ simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
 */
 if (!empty($errors)) {
   $_SESSION['old'] = [
-    'nim'  => $nim,
-    'nama_lengkap' => $namalengkap,
-    'tempat_lahir' => $tempatlahir,
-    'tanggal_lahir' => $tanggallahir,
-    'hobi' => $hobi,
-    'pasangan' => $pasangan,
-    'pekerjaan' => $pekerjaan,
-    'nama_orang_tua' => $namaOrangTua,
-    'nama_kakak' => $namaKakak,
-    'nama_adik' => $namaAdik,
+    'kodedos'  => $KodeDosen,
+    'nama' => $NamaDosen,
+    'alamat' => $Alamat,
+    'tanggal' => $TanggalJadiDosen,
+    'jja' => $JJA,
+    'namapasangan' => $NamaPasangan,
+    'nomorhp' => $NomorHp,
+    'homebaseprodi' => $HomebaseProdi,
+    'namaanak' => $NamaAnak,
+    'bidangilmudosen' => $BidangIlmuDosen,
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -119,7 +93,7 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_biodata (cnim, cnama_lengkap, ctempat_lahir, ctanggal_lahir, chobi, cpasangan, cpekerjaan, cnama_orang_tua, cnama_kakak, cnama_adik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO tbl_biodata_dosen (cKodeDosen, cNamaDosen, cAlamat, cTanggalJadiDosen, cJJA, cNamaPasangan, cNomorHp, cHomebaseProdi, cNamaAnak, cBidangIlmuDosen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
@@ -128,24 +102,23 @@ if (!$stmt) {
   redirect_ke('index.php#biodata');
 }
 #bind parameter dan eksekusi (s = string)
-mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $namalengkap, $tempatlahir, $tanggallahir, $hobi, $pasangan, $pekerjaan, $namaOrangTua, $namaKakak, $namaAdik);
-
+mysqli_stmt_bind_param($stmt, "ssssssssss", $KodeDosen, $NamaDosen, $Alamat, $TanggalJadiDosen, $JJA, $NamaPasangan, $NomorHp, $HomebaseProdi, $NamaAnak, $BidangIlmuDosen);
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
   redirect_ke('index.php#biodata'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
-    'nim'  => $nim,
-    'nama_lengkap' => $namalengkap,
-    'tempat_lahir' => $tempatlahir,
-    'tanggal_lahir' => $tanggallahir,
-    'hobi' => $hobi,
-    'pasangan' => $pasangan,
-    'pekerjaan' => $pekerjaan,
-    'nama_orang_tua' => $namaOrangTua,
-    'nama_kakak' => $namaKakak,
-    'nama_adik' => $namaAdik,
+    'kodedos'  => $KodeDosen,
+    'nama' => $NamaDosen,
+    'alamat' => $Alamat,
+    'tanggal' => $TanggalJadiDosen,
+    'jja' => $JJA,
+    'namapasangan' => $NamaPasangan,
+    'nomorhp' => $NomorHp,
+    'namaorangtua' => $HomebaseProdi,
+    'namaanak' => $NamaAnak,
+    'bidangilmudosen' => $BidangIlmuDosen,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php#biodata');
