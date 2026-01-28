@@ -18,7 +18,7 @@
     menyiapkan query UPDATE dengan prepared statement 
     (WAJIB WHERE cid = ?)
   */
-  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_tamu
+  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_biodata_dosen
                                 WHERE cid = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
