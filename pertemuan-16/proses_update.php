@@ -1,4 +1,3 @@
-
 <?php
   session_start();
   require __DIR__ . '/koneksi.php';
@@ -21,60 +20,43 @@
   }
 
   #ambil dan bersihkan (sanitasi) nilai dari form
-  $KodeDos = bersihkan($_POST['txtKodeDosEd'] ?? '');
-  $NamaDosen = bersihkan($_POST['txtNmDosEd'] ?? '');
-  $Alamat = bersihkan($_POST['txtAlRmhEd'] ?? '');
-  $TanggalJadiDosen = bersihkan($_POST['txtTglDosenEd'] ?? '');
-  $JJA = bersihkan($_POST['txtJJAEd'] ?? '');
-  $NamaPasangan = bersihkan($_POST['txtNamaPasanganEd'] ?? '');
-  $NomorHp = bersihkan($_POST['txtNoHPEd'] ?? '');
-  $HomebaseProdi = bersihkan($_POST['txtProdiEd'] ?? '');
-  $NamaAnak = bersihkan($_POST['txtNmAnakEd'] ?? '');
-  $BidangIlmuDosen = bersihkan($_POST['txtBidangIlmuEd'] ?? '');
+  $nama  = bersihkan($_POST['txtNamaEd']  ?? '');
+  $email = bersihkan($_POST['txtEmailEd'] ?? '');
+  $pesan = bersihkan($_POST['txtPesanEd'] ?? '');
+  $captcha = bersihkan($_POST['txtCaptcha'] ?? '');
+
   #Validasi sederhana
   $errors = []; #ini array untuk menampung semua error yang ada
 
-    if ($KodeDos === '') {
-        $errors[] = 'Kode Dosen wajib diisi.';
-    }
+  if ($nama === '') {
+    $errors[] = 'Nama wajib diisi.';
+  }
 
-    if ($NamaDosen === '') {
-        $errors[] = 'Nama Dosen wajib diisi.';
-    }
+  if ($email === '') {
+    $errors[] = 'Email wajib diisi.';
+  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Format e-mail tidak valid.';
+  }
 
-    if($Alamat === '') {
-        $errors[] = 'Alamat wajib diisi.';
-    }
+  if ($pesan === '') {
+    $errors[] = 'Pesan wajib diisi.';
+  }
 
-    if ($TanggalJadiDosen === '') {
-        $errors[] = 'Tanggal Jadi Dosen wajib diisi.';
-    }
+  if ($captcha === '') {
+    $errors[] = 'Pertanyaan wajib diisi.';
+  }
 
-    if ($JJA === '') {
-        $errors[] = 'JJA wajib diisi.';
-    }
+  if (mb_strlen($nama) < 3) {
+    $errors[] = 'Nama minimal 3 karakter.';
+  }
 
-    if ($NamaPasangan === '') {
-        $errors[] = 'Nama Pasangan wajib diisi.';
-    }
+  if (mb_strlen($pesan) < 10) {
+    $errors[] = 'Pesan minimal 10 karakter.';
+  }
 
-    if ($NomorHp === '') {
-        $errors[] = 'Nomor HP wajib diisi.';
-    }
-
-    if ($HomebaseProdi === '') {
-        $errors[] = 'Homebase Prodi wajib diisi.';
-    }
-
-    if ($NamaAnak === '') {
-        $errors[] = 'Nama Anak wajib diisi.';
-    }
-
-    if ($BidangIlmuDosen === '') {
-        $errors[] = 'Bidang Ilmu Dosen wajib diisi.';
-    }
-
-    
+  if ($captcha!=="6") {
+    $errors[] = 'Jawaban '. $captcha.' captcha salah.';
+  }
 
   /*
   kondisi di bawah ini hanya dikerjakan jika ada error, 
@@ -82,16 +64,9 @@
   */
   if (!empty($errors)) {
     $_SESSION['old'] = [
-        'kodedosen'  => $KodeDos,
-        'namadosen' => $NamaDosen,
-        'alamat' => $Alamat,
-        'tanggaljadidosen' => $TanggalJadiDosen,
-        'jja' => $JJA,
-        'namapasangan' => $NamaPasangan,
-        'nomorhp' => $NomorHp,
-        'homebaseprodi' => $HomebaseProdi,
-        'namaanak' => $NamaAnak,
-        'bidangilmudosen' => $BidangIlmuDosen,
+      'nama'  => $nama,
+      'email' => $email,
+      'pesan' => $pesan
     ];
 
     $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -103,8 +78,8 @@
     menyiapkan query UPDATE dengan prepared statement 
     (WAJIB WHERE cid = ?)
   */
-  $stmt = mysqli_prepare($conn, "UPDATE tbl_biodata_dosen
-                                SET cKodeDosen = ?, cNamaDosen = ?, cAlamat = ?, cTanggalJadiDosen = ?, cJJA = ?, cNamaPasangan = ?, cNomorHp = ?, cHomebaseProdi = ?, cNamaAnak = ?, cBidangIlmuDosen = ? 
+  $stmt = mysqli_prepare($conn, "UPDATE tbl_tamu 
+                                SET cnama = ?, cemail = ?, cpesan = ? 
                                 WHERE cid = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
@@ -113,26 +88,20 @@
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
-  mysqli_stmt_bind_param($stmt, "ssssssssssi", $KodeDos, $NamaDosen, $Alamat, $TanggalJadiDosen, $JJA, $NamaPasangan, $NomorHp, $HomebaseProdi, $NamaAnak, $BidangIlmuDosen, $cid);
+  mysqli_stmt_bind_param($stmt, "sssi", $nama, $email, $pesan, $cid);
+
   if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     unset($_SESSION['old']);
     /*
       Redirect balik ke read.php dan tampilkan info sukses.
     */
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
-    redirect_ke('readbiodata.php'); #pola PRG: kembali ke data dan exit()
+    redirect_ke('read.php'); #pola PRG: kembali ke data dan exit()
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
     $_SESSION['old'] = [
-        'kodedosen'  => $KodeDos,
-        'namadosen' => $NamaDosen,
-        'alamat' => $Alamat,
-        'tanggaljadidosen' => $TanggalJadiDosen,
-        'jja' => $JJA,
-        'namapasangan' => $NamaPasangan,
-        'nomorhp' => $NomorHp,
-        'homebaseprodi' => $HomebaseProdi,
-        'namaanak' => $NamaAnak,
-        'bidangilmudosen' => $BidangIlmuDosen,
+      'nama'  => $nama,
+      'email' => $email,
+      'pesan' => $pesan,
     ];
     $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
     redirect_ke('edit.php?cid='. (int)$cid);
