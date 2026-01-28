@@ -105,6 +105,11 @@ require_once __DIR__ . '/fungsi.php';
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+
+      <br>
+      <hr>
+      <h2>Data Biodata Dosen</h2>
+      <?php include 'readbiodatadosen_inc.php'; ?>
     </section>
 
     <?php
@@ -190,7 +195,7 @@ require_once __DIR__ . '/fungsi.php';
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Moh.Sayyid Abraar [2511500015]</p>
   </footer>
 
   <script src="script.js"></script>
