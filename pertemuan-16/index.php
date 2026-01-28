@@ -42,44 +42,64 @@ require_once __DIR__ . '/fungsi.php';
       <h2>Biodata Dosen</h2>
       <form action="proses_bio.php" method="POST">
 
-        <label for="txtKodeDos"><span>Kode Dosen:</span>
-          <input type="text" id="txtKodeDos" name="txtKodeDos" placeholder="Masukkan Kode Dosen" required>
+      <label for="txtKodeDos"><span>Kode Dosen:</span>
+          <input type="text" id="txtKodeDos" name="txtKodeDos" placeholder="Masukkan Kode Dosen"
+            required autocomplete="kode_dos"
+            value="<?= isset($old['kode_dos']) ? htmlspecialchars($old['kode_dos']) : '' ?>">
         </label>
-
+      
         <label for="txtNmDosen"><span>Nama Dosen:</span>
-          <input type="text" id="txtNmDosen" name="txtNmDosen" placeholder="Masukkan Nama Dosen" required>
+          <input type="text" id="txtNmDosen" name="txtNmDosen" placeholder="Masukkan Nama Dosen"
+            required autocomplete="nama_dosen"
+            value="<?= isset($old['nama_dosen']) ? htmlspecialchars($old['nama_dosen']) : '' ?>">
         </label>
 
         <label for="txtAlRmh"><span>Alamat Rumah:</span>
-          <input type="text" id="txtAlRmh" name="txtAlRmh" placeholder="Masukkan Alamat Rumah" required>
+          <input type="text" id="txtAlRmh" name="txtAlRmh" placeholder="Masukkan Alamat Rumah"
+            required autocomplete="alamat_rumah"
+            value="<?= isset($old['alamat_rumah']) ? htmlspecialchars($old['alamat_rumah']) : '' ?>">
         </label>
 
         <label for="txtTglDosen"><span>Tanggal Jadi Dosen:</span>
-          <input type="text" id="txtTglDosen" name="txtTglDosen" placeholder="Masukkan Tanggal Jadi Dosen" required>
+          <input type="date" id="txtTglDosen" name="txtTglDosen" placeholder="Masukkan Tanggal Jadi Dosen"
+            required autocomplete="tanggal_jadi_dosen"
+            value="<?= isset($old['tanggal_jadi_dosen']) ? htmlspecialchars($old['tanggal_jadi_dosen']) : '' ?>">
         </label>
 
         <label for="txtJJA"><span>JJA Dosen:</span>
-          <input type="text" id="txtJJA" name="txtJJA" placeholder="Masukkan JJA Dosen" required>
+          <input type="text" id="txtJJA" name="txtJJA" placeholder="Masukkan JJA Dosen"
+            required autocomplete="jja_dosen"
+            value="<?= isset($old['jja_dosen']) ? htmlspecialchars($old['jja_dosen']) : '' ?>">
         </label>
 
-        <label for="txtProdi"><span>Homebase Prodi:</span>
-          <input type="text" id="txtProdi" name="txtProdi" placeholder="Masukkan Homebase Prodi" required>
+        <label for="txtNamaPasangan"><span>Nama Pasangan:</span>
+          <input type="text" id="txtNamaPasangan" name="txtNamaPasangan" placeholder="Masukkan Nama Pasangan"
+            required autocomplete="nama_pasangan"
+            value="<?= isset($old['nama_pasangan']) ? htmlspecialchars($old['nama_pasangan']) : '' ?>">
         </label>
 
-        <label for="txtNoHP"><span>Nomor HP:</span>
-          <input type="text" id="txtNoHP" name="txtNoHP" placeholder="Masukkan Nomor HP" required>
+        <label for="txtNoHP"><span>Nomor Hp:</span>
+          <input type="text" id="txtNoHP" name="txtNoHP" placeholder="Masukkan Nomor HP"
+            required autocomplete="nomor_hp"
+            value="<?= isset($old['nomor_hp']) ? htmlspecialchars($old['nomor_hp']) : '' ?>">
         </label>
 
-        <label for="txNamaPasangan"><span>Nama Pasangan:</span>
-          <input type="text" id="txNamaPasangan" name="txNamaPasangan" placeholder="Masukkan Nama Pasangan" required>
+        <label for="txtHomebaseProdi"><span>Homebase Prodi:</span>
+          <input type="text" id="txtHomebaseProdi" name="txtHomebaseProdi" placeholder="Masukkan Homebase Prodi"
+            required autocomplete="homebase_prodi"
+            value="<?= isset($old['homebase_prodi']) ? htmlspecialchars($old['homebase_prodi']) : '' ?>">
         </label>
 
         <label for="txtNmAnak"><span>Nama Anak:</span>
-          <input type="text" id="txtNmAnak" name="txtNmAnak" placeholder="Masukkan Nama Anak" required>
+          <input type="text" id="txtNmAnak" name="txtNmAnak" placeholder="Masukkan Nama Anak"
+            required autocomplete="nama_anak"
+            value="<?= isset($old['nama_anak']) ? htmlspecialchars($old['nama_anak']) : '' ?>">
         </label>
 
         <label for="txtBidangIlmu"><span>Bidang Ilmu Dosen:</span>
-          <input type="text" id="txtBidangIlmu" name="txtBidangIlmu" placeholder="Masukkan Bidang Ilmu Dosen" required>
+          <input type="text" id="txtBidangIlmu" name="txtBidangIlmu" placeholder="Masukkan Bidang Ilmu Dosen"
+            required autocomplete="bidang_ilmu_dosen"
+            value="<?= isset($old['bidang_ilmu_dosen']) ? htmlspecialchars($old['bidang_ilmu_dosen']) : '' ?>">
         </label>
 
         <button type="submit">Kirim</button>
